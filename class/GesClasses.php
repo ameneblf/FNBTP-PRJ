@@ -8,13 +8,13 @@ include_once('../db/connexion.php');
  echo "echec";
  }*/
 if (!isset($_SESSION['loggedin'])) {
-    header('refresh:0;url=404.php'); //2 s
+    header('refresh:0;url=../404.php'); //2 s
     exit();
 }
 ?>
 <!DOCTYPE html>
 
-<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="assets/" data-template="vertical-menu-template-free">
+<html lang="fr" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="assets/" data-template="vertical-menu-template-free">
 
 <head>
     <meta charset="utf-8" />
@@ -73,9 +73,10 @@ if (!isset($_SESSION['loggedin'])) {
                         <i class="bx bx-chevron-left bx-sm align-middle"></i>
                     </a>
                 </div>
+
                 <div class="menu-inner-shadow"></div>
+
                 <ul class="menu-inner py-1">
-                    <!-- Dashboard -->
                     <li class="menu-item ">
                         <a href="../dashboard.php" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
@@ -86,57 +87,10 @@ if (!isset($_SESSION['loggedin'])) {
                     <li class="menu-item">
                         <a href="../Entreprises.php" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-buildings"></i>
-
                             <div data-i18n="Basic">Gestion d'Entreprises</div>
                         </a>
                     </li>
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-shield-alt-2"></i>
-                            <div data-i18n="Account Settings">Qualifications et Classifications</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                    <div data-i18n="Notifications">Ministere de l'Habitat</div>
-                                </a>
-                                <ul class="menu-sub">
-                                    <li class="menu-item">
-                                        <a href="../Demandehabitat.php" class="menu-link">
-                                            <div data-i18n="Account">Demande des Qualification et Classes</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="../table_comhabitat.php" class="menu-link">
-                                            <div data-i18n="Account">Etude de la Comande</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item">
-                                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                    <div data-i18n="Notifications">Ministere de l'Equipement</div>
-                                </a>
-                                <ul class="menu-sub">
-                                    <li class="menu-item">
-                                        <a href="../Demande.php" class="menu-link">
-                                            <div data-i18n="Account">Demande des Qualification et Classes</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="../table_com.php" class="menu-link">
-                                            <div data-i18n="Account">Etude de la Comande</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item ">
-                                        <a href="../equipement_comm.php" class="menu-link">
-                                            <div data-i18n="Account">Commission</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
+
                     <li class="menu-header small text-uppercase">
                         <span class="menu-header-text">OPERATIONS</span>
                     </li>
@@ -146,7 +100,7 @@ if (!isset($_SESSION['loggedin'])) {
                             <div data-i18n="Account Settings">Operation</div>
                         </a>
                         <ul class="menu-sub">
-                            <li class="menu-item ">
+                            <li class="menu-item">
                                 <a href="../adhesion.php" class="menu-link">
                                     <div data-i18n="Account">Adhésion</div>
                                 </a>
@@ -156,15 +110,42 @@ if (!isset($_SESSION['loggedin'])) {
                                     <div data-i18n="Notifications">Cotisation</div>
                                 </a>
                             </li>
-                            
+                            <li class="menu-item">
+                                <a href="../Qualification.php" class="menu-link">
+                                    <div data-i18n="Notifications">Saisie des QC</div>
+                                </a>
+                            </li>
+                            <li class="menu-item ">
+                                <a href="../mise_certif.php" class="menu-link">
+                                    <div data-i18n="Notifications">Certificats de QC</div>
+                                </a>
+                            </li><li class="menu-item">
+                <a href="../demande_encou.php " class="menu-link">
+                  <div data-i18n="Notifications">Certificats encours</div>
+                </a>
+              </li>
+                            <!-- <li class="menu-item">
+                <a href="#" class="menu-link">
+                  <div data-i18n="Notifications">Formation</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="#" class="menu-link">
+                  <div data-i18n="Notifications">Reclamations</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="#" class="menu-link">
+                  <div data-i18n="Notifications">Journee Etude semminiare</div>
+                </a>
+              </li> -->
                         </ul>
                     </li>
-                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Tableaux de
-                            Consultation</span></li>
+                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Tableaux de Consultation</span></li>
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bxs-file-find "></i>
-                            <div data-i18n="Account Settings">Entreprise</div>
+                            <i class="menu-icon tf-icons bx bxs-file-find"></i>
+                            <div data-i18n="Account Settings">Recherche et Statistique</div>
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item ">
@@ -172,14 +153,17 @@ if (!isset($_SESSION['loggedin'])) {
                                     <div data-i18n="Connections">Adhésion et Qualification</div>
                                 </a>
                             </li>
+                            <li class="menu-item ">
+                                <a href="../consultation/recouvrement.php" class="menu-link">
+                                    <div data-i18n="Connections">Recouvrement</div>
+                                </a>
+                            </li>
                         </ul>
                     </li>
 
-                    <!-- Forms & Tables -->
-                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Tableaux de
-                            setting</span></li>
+                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Tableaux de setting</span></li>
                     <!-- Tables -->
-                    <li class="menu-item">
+                    <li class="menu-item active">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-key"></i>
                             <div data-i18n="Account Settings">Paramétres</div>
@@ -286,7 +270,7 @@ if (!isset($_SESSION['loggedin'])) {
                                         <div class="dropdown-divider"></div>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#">
+                                        <a class="dropdown-item" href="profile.php">
                                             <i class="bx bx-user me-2"></i>
                                             <span class="align-middle">Mon profil</span>
                                         </a>
@@ -296,7 +280,7 @@ if (!isset($_SESSION['loggedin'])) {
                                         echo "<li>
                                     <a class=\"dropdown-item\" href=\"../setting.php\">
                                     <i class=\"bx bx-cog me-2\"></i>
-                                    <span class=\"align-middle\"> Settings</span>
+                                    <span class=\"align-middle\"> Paramètres</span>
                                     </a>
                                 </li>";
                                     }
@@ -322,13 +306,17 @@ if (!isset($_SESSION['loggedin'])) {
                 <div class="content-wrapper">
                     <!-- Content -->
                     <div class="container-xxl flex-grow-1 container-p-y">
-
-
                         <br>
                         <div class="card row g-2 ">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <h5 class="card-header"> <strong>Tableaux des Classes</strong></h5>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="input-group input-group-merge col mb-0" style="margin-top: 3.5% !important;">
+                                        <span class="input-group-text" id="basic-addon-search31"><i class="bx bx-search"></i></span>
+                                        <input id="search" type="text" class="form-control" placeholder="Recherche par nom de classe | code" aria-label="Search..." aria-describedby="basic-addon-search31">
+                                    </div>
                                 </div>
                                 <div class="col-md-4 " style="margin-left: auto;text-align-last: right; align-self: center; padding-right: calc(var(--bs-gutter-x) * 0.9);">
                                     <!-- Button trigger modal -->
@@ -396,7 +384,15 @@ if (!isset($_SESSION['loggedin'])) {
                                                             <span id="basic-icon-directions" class="input-group-text"><i class="bx bx-directions"></i></span>
                                                             <select required name="direction" id="direction" class="form-select">
                                                                 <option value="0 ">Sélection par défaut</option>
-
+                                                                <?php
+                                                                $qdirection = "SELECT * FROM `direction`";
+                                                                $direction = mysqli_query($conn, $qdirection);
+                                                                if (mysqli_num_rows($direction) > 0) {
+                                                                    while ($row = mysqli_fetch_assoc($direction)) {
+                                                                        echo "<option value=" . $row["Code"] . ">" . $row["nom"] . "</option>";
+                                                                    }
+                                                                }
+                                                                ?>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -408,14 +404,14 @@ if (!isset($_SESSION['loggedin'])) {
                                                         <label class="form-label" for="basic-icon-default-company">Chiffre D'affaires</label>
                                                         <div class="input-group input-code">
                                                             <span id="basic-icon-code" class="input-group-text">>=</span>
-                                                            <input type="number" required name="CA" id="basic-icon-code" class="form-control" min="0" placeholder="XXXXX" aria-label="CA" aria-describedby="basic-icon-default-CA">
+                                                            <input type="text" required name="CA" id="basic-icon-code" class="form-control" min="0" placeholder="XXXXX" aria-label="CA" aria-describedby="basic-icon-default-CA">
                                                         </div>
                                                     </div>
                                                     <div class="col mb-0">
                                                         <label class="form-label" for="basic-icon-default-company">Capital social</label>
                                                         <div class="input-group input-code">
                                                             <span id="basic-icon-code" class="input-group-text">>=</span>
-                                                            <input type="number" min="0" required name="CS" id="basic-icon-code" class="form-control" placeholder="XXXXX" aria-label="CA" aria-describedby="basic-icon-default-CA">
+                                                            <input type="text" min="0" required name="CS" id="basic-icon-code" class="form-control" placeholder="XXXXX" aria-label="CA" aria-describedby="basic-icon-default-CA">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -464,7 +460,7 @@ if (!isset($_SESSION['loggedin'])) {
                             $queryup = "UPDATE `classe` SET `nom`='$nom',`ministere`='$ministere',`type_direction`='$type_direction' ,`chiffre_aff`='$chiffre_aff' ,`CS`='$CS' ,`Nb_min_ing`='$Nb_min_ing',`Nb_tech`='$nbt',`nb_min_encadre`='$nme',`secteur`='$Secteur' WHERE `code` LIKE '$code' ";
                             if ($conn->query($queryup) === TRUE) {
                             } else {
-                                echo "Error: " . $queryup . "<br>" . $conn->error;
+                                echo "Error: " . $queryup . "<br>" . $conn->$error;
                             };
                         }
                         if (isset($_GET["id_del"])) {
@@ -472,7 +468,7 @@ if (!isset($_SESSION['loggedin'])) {
                             $query = "DELETE FROM `classe` WHERE `code`='$id'";
                             if ($conn->query($query) === TRUE) {
                             } else {
-                                echo "Error: " . $queryup . "<br>" . $conn->error;
+                                echo "Error: " . $queryup . "<br>" . $conn->$error;
                             };
                         }
                         ?>
@@ -492,7 +488,7 @@ if (!isset($_SESSION['loggedin'])) {
                                 $addquery = "INSERT INTO `classe`(`code`, `nom`, `ministere`,`type_direction` , `chiffre_aff`,`CS`,`Nb_min_ing`, `Nb_tech`,`nb_min_encadre`,`secteur`) VALUES ('$code','$nom','$ministere','$type_direction',$chiffre_aff,$CS,$Nb_min_ing,$nbt,$nme,'$Secteur')";
                                 if ($conn->query($addquery) === TRUE) {
                                 } else {
-                                    echo "Error: " . $addquery . "<br>" . $conn->error;
+                                    echo "Error: " . $addquery . "<br>" . $conn->$error;
                                 };
                             }
 
@@ -504,11 +500,6 @@ if (!isset($_SESSION['loggedin'])) {
                                         <th>Classe</th>
                                         <th>minister</th>
                                         <th>Type direction</th>
-                                        <th>Chiffre d'affaires</th>
-                                        <th>Capital social</th>
-                                        <th>Nombre minimum D'ingénieurs</th>
-                                        <th>Technicien</th>
-                                        <th>Note minimale D'encadrement</th>
                                         <th>secteur</th>
                                         <th>Actions</th>
                                     </tr>
@@ -523,7 +514,7 @@ if (!isset($_SESSION['loggedin'])) {
                                                         <tr id=" . $row["code"] . ">
                                                             <td><strong>" . $row["code"] . "</strong></td>
                                                             <td data-target=\"name\">" . $row["nom"] . "</td>
-                                                            <td data-target=\"minister\">";
+                                                            <td id=\"" . $row["ministere"] . "\" data-target=\"minister\">";
                                             $var = $row["ministere"];
                                             $qministere = "SELECT * FROM `data_r`.`ministere` WHERE `code` = '$var'";
                                             $ministere = mysqli_query($conn, $qministere);
@@ -532,7 +523,7 @@ if (!isset($_SESSION['loggedin'])) {
                                                     echo $row1[1] . "</td>";
                                                 }
                                             };
-                                            echo "          <td data-target=\"type_direction\">";
+                                            echo "<td id=\"" . $row["type_direction"] . "\" data-target=\"type_direction\">";
                                             $var = $row["type_direction"];
                                             $qdirection = "SELECT * FROM `data_r`.`direction` WHERE `code` = '$var'";
                                             $direction = mysqli_query($conn, $qdirection);
@@ -541,12 +532,7 @@ if (!isset($_SESSION['loggedin'])) {
                                                     echo $row1[1] . "</td>";
                                                 }
                                             };
-                                            echo "          <td data-target=\"chiffre_aff\"> >=" . $row["chiffre_aff"] . "MDH</td>
-                                                            <td data-target=\"CS\"> >=" . $row["CS"] . "MDH</td>
-                                                            <td data-target=\"Nb_min_ing\">" . $row["Nb_min_ing"] . "</td>
-                                                            <td data-target=\"Nb_tech\">" . $row["Nb_tech"] . "</td>
-                                                            <td data-target=\"nb_min_encadre\">" . $row["nb_min_encadre"] . "</td>
-                                                            <td data-target=\"secteur\">";
+                                            echo "<td id=\"" . $row["secteur"] . "\" data-target=\"secteur\">";
                                             $var = $row["secteur"];
                                             $qsecteur = "SELECT * FROM `data_r`.`secteur` WHERE `code` = '$var'";
                                             $secteur = mysqli_query($conn, $qsecteur);
@@ -591,7 +577,7 @@ if (!isset($_SESSION['loggedin'])) {
                     </div>
                 </div>
                 <!-- Content wrapper -->
-                
+
             </div>
             <!-- / Layout page -->
         </div>
@@ -599,7 +585,7 @@ if (!isset($_SESSION['loggedin'])) {
         <div class="layout-overlay layout-menu-toggle"></div>
     </div>
     <?php
-    
+
     ?>
     <!-- / Layout wrapper -->
     <!-- Core JS -->
@@ -607,10 +593,26 @@ if (!isset($_SESSION['loggedin'])) {
         $(document).ready(function() {
             $(document).on('click', 'a[data-role=update]', function() {
                 var id = $(this).data('id');
+                var enrow = $(this).closest("tr");
                 var name = $('#' + id).children('td[data-target=name]').text();
+                var ministereup = enrow.find("td:eq(2)").attr('id');
+                var directionup = enrow.find("td:eq(3)").attr('id');
+                var Secteurup = enrow.find("td:eq(4)").attr('id');
+                var id = enrow.attr('id');
                 $('#codeup').val(id);
                 $('#nomup').val(name);
+                $('#ministereup').val(ministereup);
+                $('#directionup').val(directionup);
+                $('#Secteurup').val(Secteurup);
+                $('#CAup').val(0);
+                $('#CSup').val(0);
+                $('#nbingup').val(0);
+                $('#nbtup').val(0);
+                $('#nmeup').val(0);
+                console.log(ministereup);
+                console.log(id);
             });
+
             $('#ministere').change(function() {
                 var ministere = $(this).val();
                 if (ministere != 0) {
@@ -622,7 +624,21 @@ if (!isset($_SESSION['loggedin'])) {
                             $('#secteur').html(data);
                         }
                     );
-                } 
+                }
+            });
+
+            $("#search").keyup(function() {
+                var search = $("#search").val()
+                $.ajax({
+                    url: '../recherchad.php',
+                    method: 'post',
+                    data: {
+                        classserc: search
+                    },
+                    success: function(response) {
+                        $('#tabledata').html(response);
+                    }
+                });
             });
         });
     </script>

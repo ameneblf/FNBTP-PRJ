@@ -8,7 +8,7 @@ echo $_SESSION['id'] ;
 echo "echec";
 }*/
 if (!isset($_SESSION['loggedin'])) {
-    header('refresh:0;url=404.php'); //2 s
+    header('refresh:0;url=../404.php'); //2 s
     exit();
 }
 ?>
@@ -22,7 +22,7 @@ if (!isset($_SESSION['loggedin'])) {
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Region</title>
+    <title>Recouvrement</title>
 
     <meta name="description" content="" />
 
@@ -67,6 +67,7 @@ if (!isset($_SESSION['loggedin'])) {
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
             <!-- Menu -->
+
             <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
                 <div class="app-brand demo">
                     <a href="../dashboard.php" class="app-brand-link">
@@ -82,6 +83,7 @@ if (!isset($_SESSION['loggedin'])) {
                 <div class="menu-inner-shadow"></div>
 
                 <ul class="menu-inner py-1">
+                    <!-- Dashboard -->
                     <li class="menu-item ">
                         <a href="../dashboard.php" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
@@ -105,6 +107,7 @@ if (!isset($_SESSION['loggedin'])) {
                             <div data-i18n="Account Settings">Operation</div>
                         </a>
                         <ul class="menu-sub">
+
                             <li class="menu-item">
                                 <a href="../adhesion.php" class="menu-link">
                                     <div data-i18n="Account">Adhésion</div>
@@ -126,30 +129,30 @@ if (!isset($_SESSION['loggedin'])) {
                                 </a>
                             </li>
                             <li class="menu-item">
-                <a href="../demande_encou.php " class="menu-link">
-                  <div data-i18n="Notifications">Certificats encours</div>
-                </a>
-              </li>
+                                <a href="../demande_encou.php " class="menu-link">
+                                    <div data-i18n="Notifications">Certificats encours</div>
+                                </a>
+                            </li>
                             <!-- <li class="menu-item">
-                <a href="#" class="menu-link">
-                  <div data-i18n="Notifications">Formation</div>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a href="#" class="menu-link">
-                  <div data-i18n="Notifications">Reclamations</div>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a href="#" class="menu-link">
-                  <div data-i18n="Notifications">Journee Etude semminiare</div>
-                </a>
-              </li> -->
+                                <a href="#" class="menu-link">
+                                    <div data-i18n="Notifications">Formation</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <div data-i18n="Notifications">Reclamations</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <div data-i18n="Notifications">Journee Etude semminiare</div>
+                                </a>
+                            </li> -->
                         </ul>
                     </li>
                     <li class="menu-header small text-uppercase"><span class="menu-header-text">Tableaux de
                             Consultation</span></li>
-                    <li class="menu-item">
+                    <li class="menu-item active">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bxs-file-find"></i>
                             <div data-i18n="Account Settings">Recherche et Statistique</div>
@@ -160,7 +163,7 @@ if (!isset($_SESSION['loggedin'])) {
                                     <div data-i18n="Connections">Adhésion et Qualification</div>
                                 </a>
                             </li>
-                            <li class="menu-item ">
+                            <li class="menu-item active">
                                 <a href="../consultation/recouvrement.php" class="menu-link">
                                     <div data-i18n="Connections">Recouvrement</div>
                                 </a>
@@ -168,38 +171,43 @@ if (!isset($_SESSION['loggedin'])) {
                         </ul>
                     </li>
 
+                    <!-- Forms & Tables -->
                     <li class="menu-header small text-uppercase"><span class="menu-header-text">Tableaux de
                             setting</span></li>
                     <!-- Tables -->
-                    <li class="menu-item active">
+                    <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-key"></i>
                             <div data-i18n="Account Settings">Paramétres</div>
                         </a>
                         <ul class="menu-sub">
-                            <li class="menu-item active">
-                                <a href="region.php" class="menu-link">
+                            <li class="menu-item">
+                                <a href="../class/region.php" class="menu-link">
                                     <div data-i18n="Account">Région</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="ville.php" class="menu-link">
+                                <a href="../class/ville.php" class="menu-link">
                                     <div data-i18n="Notifications">Ville</div>
                                 </a>
                             </li>
-
                             <li class="menu-item">
-                                <a href="secteurs.php" class="menu-link">
+                                <a href="#" class="menu-link">
+                                    <div data-i18n="Connections">Forme juridique</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="../class/secteurs.php" class="menu-link">
                                     <div data-i18n="Connections">Gestion des secteurs</div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="GesClasses.php" class="menu-link">
+                                <a href="../class/GesClasses.php" class="menu-link">
                                     <div data-i18n="Connections">Gestion des Classes</div>
                                 </a>
                             </li>
-                            <li class="menu-item">
-                                <a href="GesQulif.php" class="menu-link">
+                            <li class="menu-item ">
+                                <a href="../class/GesQulif.php" class="menu-link">
                                     <div data-i18n="Connections">Gestion des Qualifications</div>
                                 </a>
                             </li>
@@ -222,19 +230,6 @@ if (!isset($_SESSION['loggedin'])) {
                     </div>
 
                     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-                        <!-- Search 
-              <div class="navbar-nav align-items-center">
-                <div class="nav-item d-flex align-items-center">
-                  <i class="bx bx-search fs-4 lh-0"></i>
-                  <input
-                    type="text"
-                    class="form-control border-0 shadow-none"
-                    placeholder="Search..."
-                    aria-label="Search..."
-                  />
-                </div>
-              </div>
-               /Search -->
 
                         <ul class="navbar-nav flex-row align-items-center ms-auto">
                             <!-- Place this tag where you want the button to render. -->
@@ -291,7 +286,7 @@ if (!isset($_SESSION['loggedin'])) {
                                     <?php
                                     if ($_COOKIE['type_user'] == 1) {
                                         echo "<li>
-                                <a class=\"dropdown-item\" href=\"../setting.php\">
+                                <a class=\"dropdown-item\" href=\"setting.php\">
                                 <i class=\"bx bx-cog me-2\"></i>
                                 <span class=\"align-middle\"> Paramètres</span>
                                 </a>
@@ -314,230 +309,280 @@ if (!isset($_SESSION['loggedin'])) {
                     </div>
                 </nav>
                 <!-- / Navbar -->
-                <script>
-                    $(document).ready(function () {
-                        $("#search").keyup(function () {
-                            var search = $("#search").val()
-                            $.ajax({
-                                url: 'recherchad.php',
-                                method: 'post',
-                                data: {
-                                    adr: search
-                                },
-                                success: function (response) {
-                                    $('#tabledata').html(response);
-                                }
-                            });
-                        });
-                        // $(document).ready(function() {
-                        //   $("#date_fin").change(function() {
-                        //     var datedebut = $("#date_debut").val();
-                        //     var datefin = $("#date_fin").val();
-                        //     $.ajax({
-                        //       url: 'recherchad.php',
-                        //       method: 'get',
-                        //       data: {
-                        //         rechpardat: '',
-                        //         datedebut: datedebut,
-                        //         datefin: datefin
-                        //       },
-                        //       success: function(response) {
-                        //         $('#tabledata').html(response);
-                        //         console.log(response);
-                        //       }
-                        //     });
-                        //     console.log(datedebut + " " + datefin);
-                        //   });
-                        // });
-                    });
-                </script>
+
                 <!-- Content wrapper -->
                 <div class="content-wrapper">
                     <!-- Content -->
-                    <div class="container-xxl flex-grow-1 container-p-y">
-                        <!--<div class="card row g-2">
-                             <div class="input-group input-group-merge col mb-0" style="margin-bottom: -5px !important;">
-                                <span class="input-group-text" id="basic-addon-search31"><i
-                                        class="bx bx-search"></i></span>
-                                <input id="search" type="text" class="form-control"
-                                    placeholder="Recherche par nom | code registre" aria-label="Search..."
-                                    aria-describedby="basic-addon-search31">
-                            </div>
-                            <div class="row g-2" style="padding-bottom: calc(var(--bs-gutter-x) * 0.7);">
-
-                                 <div class="mb-2 col">
-                                    <label for="html5-date-input" class="mb-2 col col-form-label">Date debut</label>
-                                    <div class="mb-2 col">
-                                        <input class="form-control" type="date" value="2021-06-18" id="date_debut">
-                                    </div>
-                                    </div>
-                                <div class="mb-2 col">
-                                    <label for="html5-date-input" class="mb-2 col col-form-label">Date fin</label>
-                                    <div class="mb-2 col">
-                                    <input class="form-control" type="date" value="2021-06-18" id="date_fin">
-                                </div> 
-                            </div>
-                        </div>-->
-
-                        <br>
-                        <div class="card row g-2 ">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h5 class="card-header"> <strong>Tableaux de région</strong></h5>
-                                </div>
-                                <div class="col-md-4 "
-                                    style="margin-left: auto;text-align-last: right; align-self: center; padding-right: calc(var(--bs-gutter-x) * 0.9);">
-                                    <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-primary bx bx-message-square-add"
-                                        data-bs-toggle="modal" data-bs-target="#modaladd">
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="modal fade " id="modaladd" tabindex="-1" style="display: none;"
-                                aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered"
-                                    style="max-width: 30rem !important; display: block;" role="document">
-                                    <form action="region.php" method="POST">
-                                        <div class="modal-content container-xxl">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="modalCenterTitle">Add Region</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
+                    <div class="container-xxl container-p-y">
+                        <div class="col-xxl">
+                            <div class="card mb-4">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class=" card-body">
+                                            <label class="form-label" for="basic-icon-default-map">Etat</label>
+                                            <div class="input-group input-group-phone">
+                                                <span id="basic-icon-map" class="input-group-text">
+                                                    <i class='bx bxs-calendar-check'></i></span>
+                                                <select id="Etat" required name="Etat" class="form-select">
+                                                    <option value="0">Sélection par défaut</option>
+                                                    <option value="1">à jour</option>
+                                                    <option value="2">une année à régler</option>
+                                                    <option value="3">plus d'une année à régler</option>
+                                                </select>
                                             </div>
-                                            <div class="card-body">
-                                                <div class="row g-2">
-                                                    <div class="col mb-0" style="display: none;">
-                                                        <label class="form-label"
-                                                            for="basic-icon-default-phone">numero</label>
-                                                        <div class="input-group input-code">
-                                                            <span id="basic-icon-code" class="input-group-text"><i
-                                                                    class="bx bx-hash"></i></span>
-                                                            <?php
-                                                            $maxcode = "select max(code) FROM region as max";
-                                                            $idinsert = $conn->query($maxcode);
-                                                            $idinsert = mysqli_fetch_row($idinsert);
-                                                            ?>
-                                                            <input type="number" required
-                                                                value="<?php echo $idinsert[0] + 1; ?>" name="idregion"
-                                                                id="basic-icon-code" class="form-control"
-                                                                placeholder="XXXXX" aria-label="numreg"
-                                                                aria-describedby="basic-icon-default-numreg">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col mb-0">
-                                                        <label class="form-label"
-                                                            for="basic-icon-default-company">région</label>
-                                                        <div class="input-group input-code">
-                                                            <span id="basic-icon-code" class="input-group-text"><i
-                                                                    class="bx bx-map-alt"></i></span>
-                                                            <input type="text" required name="region"
-                                                                id="basic-icon-code" class="form-control"
-                                                                placeholder="XXXXX" aria-label="numreg"
-                                                                aria-describedby="basic-icon-default-numreg">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col mb-0" style="margin-top: 9px;">
-                                                    <button type="submit" name="addregion"
-                                                        class="btn btn-primary">ajouter</button>
-                                                </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class=" card-body">
+                                            <label class="form-label" for="basic-icon-default-map-alt">Qualite de
+                                                membre</label>
+                                            <div class="input-group input-group-phone">
+                                                <span id="basic-icon-map-alt" class="input-group-text"><i
+                                                        class='bx bxs-star-half'></i></span>
+                                                <select id="qualite_membre" required name="qualite_membre"
+                                                    class="form-select">
+                                                    <option value="0">Sélection par défaut</option>
+                                                    <option value="1">Membres du Bureau FNBTP RSK</option>
+                                                    <option value="2">Entreprises ayant des demandes de QC en cours
+                                                        auprès du M. Equipement</option>
+                                                    <option value="3">Entreprises dont probabilité de recouvrement
+                                                        forte</option>
+                                                    <option value="4">Entreprises dont probabilité de recouvrement
+                                                        faible</option>
+                                                    <option value="5">Entreprises règlement au bureau national
+                                                    </option>
+                                                </select>
                                             </div>
-                                    </form>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <?php
-                        if (isset($_POST["modifier"])) {
-                            $id = $_POST["idregionup"];
-                            $numreg = $_POST["regionup"];
-                            $queryup = "UPDATE `region` SET `nom`='$numreg' WHERE `code`=$id";
-                            $conn->query($queryup);
-                        }
-                        if (isset($_GET["id_del"])) {
-                            $id = $_GET["id_del"];
-                            $query = "DELETE FROM `region` WHERE `code`='$id'";
-                            $conn->query($query);
-                        }
-                        ?>
-                        <div class="table-responsive text-nowrap">
-                            <?php
-                            if (isset($_POST["addregion"])) {
-                                $id = $_POST["idregion"];
-                                $nomreg = $_POST["region"];
-                                $addquery = "INSERT INTO `region`(`code`, `nom`) VALUES ($id ,'$nomreg')";
-                                if ($conn->query($addquery) === TRUE) {
-                                } else {
-                                    echo "Error: " . $addquery . "<br>" . $conn->error;
-                                }
-                                ;
-                            }
-                            ;
-
-                            ?>
+                        <div class="card">
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Code</th>
-                                        <th>Nom de region</th>
-                                        <th>Actions</th>
+                                        <th>Entreprises</th>
+                                        <th>année</th>
+                                        <th>Montant</th>
+                                        <th>regler</th>
+                                        <th>reste a regler</th>
                                     </tr>
                                 </thead>
                                 <tbody class="table-border-bottom-0" id="tabledata">
-                                    <?php
-                                    $sql = "SELECT * FROM `region`";
-                                    $query = mysqli_query($conn, $sql);
-                                    if (mysqli_num_rows($query) > 0) {
-                                        while ($row = mysqli_fetch_assoc($query)) {
-                                            echo "
-                                                <tr id=" . $row["code"] . ">
-                                                    <td><strong>" . $row["code"] . "</strong></td>
-                                                    <td data-target=\"name\">" . $row["nom"] . "</td>";
-                                            if ($_COOKIE['type_user'] == 1) {
-                                                echo "<td>
-                                                    <div class=\"dropdown\">
-                                                        <button type=\"button\" class=\"btn p-0 dropdown-toggle hide-arrow\" data-bs-toggle=\"dropdown\">
-                                                        <i class=\"bx bx-dots-vertical-rounded\"></i>
-                                                        </button>
-                                                        <div class=\"dropdown-menu\">
-                                                        <a class=\"dropdown-item\" data-bs-toggle=\"modal\" data-role=\"update\" data-id=" . $row["code"] . " data-bs-target=\"#modalup\" href=\"#\"><i class=\"bx bx-edit-alt me-1\"></i> Edit</a>
-                                                        <a class=\"dropdown-item\" href=region.php?id_del=" . $row["code"] . "><i class=\"bx bx-trash me-1\"></i> Delete</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>";
-                                            } else {
-                                                echo "<td>NULL</td>
-                                            </tr>";
-                                            }
-                                        }
-                                    }
-                                    ?>
+
                                 </tbody>
                             </table>
-                            <?php include "updateregion.php" ?>
+                            <div class="center" id="listpage">
+
+
+                            </div>
                         </div>
                     </div>
+
+
                 </div>
-                <!-- Content wrapper -->
+
+                <div class="table-responsive text-nowrap">
+
+                </div>
             </div>
-            <!-- / Layout page -->
+            <!-- Content wrapper -->
         </div>
-        <!-- Overlay -->
-        <div class="layout-overlay layout-menu-toggle"></div>
+        <!-- / Layout page -->
+    </div>
+    <div class="bs-toast toast toast-placement-ex m-2 fade bg-danger bottom-0 end-0 hide" role="alert"
+        aria-live="assertive" aria-atomic="true" data-delay="2000">
+        <div class="toast-header">
+            <i class="bx bx-bell me-2"></i>
+            <div class="me-auto fw-semibold">Erreur</div>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">Veuillez selectionner les champs !</div>
+    </div>
+    <!-- Overlay -->
+    <div class="layout-overlay layout-menu-toggle"></div>
     </div>
     <!-- / Layout wrapper -->
     <!-- Core JS -->
     <script>
+        var page = 1;
+        var quality;
         $(document).ready(function () {
-            $(document).on('click', 'a[data-role=update]', function () {
+            $("#qualite_membre").change(function () {
+                var Etat = $("#Etat").val();
+                quality = $(this).val();
+                if (Etat == 1) {
+                    load_listajou(quality);
+                    $.get(
+                        "paginastionreco.php", {
+                        page: page,
+                        quality: quality,
+                        page: 1
+                    },
+                        function (data) {
+                            $('#tabledata').html(data);
+                        }
+                    );
+                } if (Etat == 2) {
+                    load_listnonjou(quality);
+                    $.post(
+                        "paginastionreco.php", {
+                        page1: page,
+                        quality: quality,
+                        page1: page
+                    },
+                        function (data) {
+                            $('#tabledata').html(data);
+                        }
+                    );
+                }
+            });
+            $(document).on('click', '.pagination_link', function () {
+                page = $(this).attr("id");
+                var Etat = $("#Etat").val();
+                quality = $("#qualite_membre").val();
+                console.log(page + " " + Etat + " " + quality);
+                if (Etat == 1) {
+                    $.get(
+                        "paginastionreco.php", {
+                        page: page,
+                        quality: quality,
+                        page: page
+                    },
+                        function (data) {
+                            $('#tabledata').html(data);
+                        }
+                    );
+                    load_listajou(quality);
+                } if (Etat == 2) {
+                    $.post(
+                        "paginastionreco.php", {
+                        page1: page,
+                        quality: quality,
+                        page1: page
+                    },
+                        function (data) {
+                            $('#tabledata').html(data);
+                        }
+                    );
+                    load_listnonjou(quality);
+                }
 
-                var id = $(this).data('id');
-                var name = $('#' + id).children('td[data-target=name]').text();
-                $('#idregionup').val(id);
-                $('#regionup').val(name);
+            });
+            $(document).on('click', '.next', function () {
+                page = $(this).attr("id");
+                var Etat = $("#Etat").val();
+                quality = $("#qualite_membre").val();
+                if (Etat == 1) {
+                    $.get(
+                        "paginastionreco.php", {
+                        page: page,
+                        quality: quality,
+                        page: page
+                    },
+                        function (data) {
+                            $('#tabledata').html(data);
+                        }
+                    );
+                    load_listajou(quality);
+                } if (Etat == 2) {
+                    $.post(
+                        "paginastionreco.php", {
+                        page1: page,
+                        quality: quality,
+                        page1: page
+                    },
+                        function (data) {
+                            $('#tabledata').html(data);
+                        }
+                    );
+                    load_listnonjou(quality);
+                }
+
+            });
+            $(document).on('click', '.prev', function () {
+                page = 1;
+                var Etat = $("#Etat").val();
+                quality = $("#qualite_membre").val();
+                if (Etat == 1) {
+                    $.get(
+                        "paginastionreco.php", {
+                        page: page,
+                        quality: quality,
+                        page: page
+                    },
+                        function (data) {
+                            $('#tabledata').html(data);
+                        }
+                    );
+                    load_listajou(quality);
+                } if (Etat == 2) {
+                    $.post(
+                        "paginastionreco.php", {
+                        page1: page,
+                        quality: quality,
+                        page1: page
+                    },
+                        function (data) {
+                            $('#tabledata').html(data);
+                        }
+                    );
+                    load_listnonjou(quality);
+                }
+
             });
         });
+        function load_data(page) {
+            $.get(
+                "paginastionreco.php", {
+                page: page,
+                quality: quality,
+                page: page
+            },
+                function (data) {
+                    $('#tabledata').html(data);
+                }
+            );
+        }
+        function load_listajou() {
+            $.ajax({
+                url: "pagenationlist.php",
+                method: "GET",
+                data: {
+                    "ajour": "",
+                    quality: quality
+                },
+                success: function (data) {
+                    $('#listpage').html(data);
+                }
+            });
+        }
+        function load_data1(page) {
+            $.post(
+                "paginastionreco.php", {
+                page1: page,
+                quality: quality,
+                page1: page
+            },
+                function (data) {
+                    $('#tabledata').html(data);
+                }
+            );
+        }
+        function load_listnonjou() {
+            $.ajax({
+                url: "pagenationlist.php",
+                method: "GET",
+                data: {
+                    "nonjour": "",
+                    quality: quality
+                },
+                success: function (data) {
+                    $('#listpage').html(data);
+                }
+            });
+        }
     </script>
     <!-- build:js assets/vendor/js/core.js -->
     <script src="../assets/vendor/libs/jquery/jquery.js"></script>
@@ -553,6 +598,7 @@ if (!isset($_SESSION['loggedin'])) {
 
     <!-- Main JS -->
     <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/ui-toasts.js"></script>
 
     <!-- Page JS -->
     <script src="../assets/js/dashboards-analytics.js"></script>

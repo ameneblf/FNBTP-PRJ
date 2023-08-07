@@ -14,7 +14,7 @@ if (!isset($_SESSION['loggedin'])) {
 ?>
 <!DOCTYPE html>
 
-<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="assets/" data-template="vertical-menu-template-free">
+<html lang="fr" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="assets/" data-template="vertical-menu-template-free">
 
 <head>
     <meta charset="utf-8" />
@@ -73,9 +73,10 @@ if (!isset($_SESSION['loggedin'])) {
                         <i class="bx bx-chevron-left bx-sm align-middle"></i>
                     </a>
                 </div>
+
                 <div class="menu-inner-shadow"></div>
+
                 <ul class="menu-inner py-1">
-                    <!-- Dashboard -->
                     <li class="menu-item ">
                         <a href="../dashboard.php" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
@@ -89,53 +90,7 @@ if (!isset($_SESSION['loggedin'])) {
                             <div data-i18n="Basic">Gestion d'Entreprises</div>
                         </a>
                     </li>
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-shield-alt-2"></i>
-                            <div data-i18n="Account Settings">Qualifications et Classifications</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                    <div data-i18n="Notifications">Ministere de l'Habitat</div>
-                                </a>
-                                <ul class="menu-sub">
-                                    <li class="menu-item">
-                                        <a href="../Demandehabitat.php" class="menu-link">
-                                            <div data-i18n="Account">Demande des Qualification et Classes</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="../table_comhabitat.php" class="menu-link">
-                                            <div data-i18n="Account">Etude de la Comande</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item">
-                                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                    <div data-i18n="Notifications">Ministere de l'Equipement</div>
-                                </a>
-                                <ul class="menu-sub">
-                                    <li class="menu-item">
-                                        <a href="../Demande.php" class="menu-link">
-                                            <div data-i18n="Account">Demande des Qualification et Classes</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="../table_com.php" class="menu-link">
-                                            <div data-i18n="Account">Etude de la Comande</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item ">
-                                        <a href="../equipement_comm.php" class="menu-link">
-                                            <div data-i18n="Account">Commission</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
+
                     <li class="menu-header small text-uppercase">
                         <span class="menu-header-text">OPERATIONS</span>
                     </li>
@@ -145,7 +100,7 @@ if (!isset($_SESSION['loggedin'])) {
                             <div data-i18n="Account Settings">Operation</div>
                         </a>
                         <ul class="menu-sub">
-                            <li class="menu-item ">
+                            <li class="menu-item">
                                 <a href="../adhesion.php" class="menu-link">
                                     <div data-i18n="Account">Adhésion</div>
                                 </a>
@@ -155,14 +110,43 @@ if (!isset($_SESSION['loggedin'])) {
                                     <div data-i18n="Notifications">Cotisation</div>
                                 </a>
                             </li>
+                            <li class="menu-item">
+                                <a href="../Qualification.php" class="menu-link">
+                                    <div data-i18n="Notifications">Saisie des QC</div>
+                                </a>
+                            </li>
+                            <li class="menu-item ">
+                                <a href="../mise_certif.php" class="menu-link">
+                                    <div data-i18n="Notifications">Certificats de QC</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                <a href="../demande_encou.php " class="menu-link">
+                  <div data-i18n="Notifications">Certificats encours</div>
+                </a>
+              </li>
+                            <!-- <li class="menu-item">
+                <a href="#" class="menu-link">
+                  <div data-i18n="Notifications">Formation</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="#" class="menu-link">
+                  <div data-i18n="Notifications">Reclamations</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="#" class="menu-link">
+                  <div data-i18n="Notifications">Journee Etude semminiare</div>
+                </a>
+              </li> -->
                         </ul>
                     </li>
-                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Tableaux de
-                            Consultation</span></li>
+                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Tableaux de Consultation</span></li>
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bxs-file-find "></i>
-                            <div data-i18n="Account Settings">Entreprise</div>
+                            <i class="menu-icon tf-icons bx bxs-file-find"></i>
+                            <div data-i18n="Account Settings">Recherche et Statistique</div>
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item ">
@@ -170,14 +154,17 @@ if (!isset($_SESSION['loggedin'])) {
                                     <div data-i18n="Connections">Adhésion et Qualification</div>
                                 </a>
                             </li>
+                            <li class="menu-item ">
+                                <a href="../consultation/recouvrement.php" class="menu-link">
+                                    <div data-i18n="Connections">Recouvrement</div>
+                                </a>
+                            </li>
                         </ul>
                     </li>
 
-                    <!-- Forms & Tables -->
-                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Tableaux de
-                            setting</span></li>
+                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Tableaux de setting</span></li>
                     <!-- Tables -->
-                    <li class="menu-item">
+                    <li class="menu-item active">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-key"></i>
                             <div data-i18n="Account Settings">Paramétres</div>
@@ -284,7 +271,7 @@ if (!isset($_SESSION['loggedin'])) {
                                         <div class="dropdown-divider"></div>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#">
+                                        <a class="dropdown-item" href="profile.php">
                                             <i class="bx bx-user me-2"></i>
                                             <span class="align-middle">Mon profil</span>
                                         </a>
@@ -294,7 +281,7 @@ if (!isset($_SESSION['loggedin'])) {
                                         echo "<li>
                                     <a class=\"dropdown-item\" href=\"../setting.php\">
                                     <i class=\"bx bx-cog me-2\"></i>
-                                    <span class=\"align-middle\"> Settings</span>
+                                    <span class=\"align-middle\"> Paramètres</span>
                                     </a>
                                 </li>";
                                     }
@@ -383,8 +370,14 @@ if (!isset($_SESSION['loggedin'])) {
                         <br>
                         <div class="card row g-2 ">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <h5 class="card-header"> <strong>Tableaux des secteurs</strong></h5>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="input-group input-group-merge col mb-0" style="margin-top: 3.5% !important;">
+                                        <span class="input-group-text" id="basic-addon-search31"><i class="bx bx-search"></i></span>
+                                        <input id="search" type="text" class="form-control" placeholder="Recherche par nom de Secteur | code" aria-label="Search..." aria-describedby="basic-addon-search31">
+                                    </div>
                                 </div>
                                 <div class="col-md-4 " style="margin-left: auto;text-align-last: right; align-self: center; padding-right: calc(var(--bs-gutter-x) * 0.9);">
                                     <!-- Button trigger modal -->
@@ -472,12 +465,13 @@ if (!isset($_SESSION['loggedin'])) {
                         if (isset($_POST["updatesec"])) {
                             $id = $_POST["codeup"];
                             $noms = $_POST["nomup"];
+                            $noms = str_replace("'", "\'", $noms);
                             $ministere = $_POST["ministereup"];
                             $categ = $_POST["categup"];
                             $queryup = "UPDATE `secteur` SET `nom`='$noms',`type_minister`='$ministere',`categorie`='$categ' WHERE `code` LIKE '$id' ";
                             if ($conn->query($queryup) === TRUE) {
                             } else {
-                                echo "Error: " . $queryup . "<br>" . $conn->error;
+                                echo "Error: " . $queryup . "<br>" . $conn->$error;
                             };
                         }
                         if (isset($_GET["id_del"])) {
@@ -485,7 +479,7 @@ if (!isset($_SESSION['loggedin'])) {
                             $query = "DELETE FROM `secteur` WHERE `code`='$id'";
                             if ($conn->query($query) === TRUE) {
                             } else {
-                                echo "Error: " . $queryup . "<br>" . $conn->error;
+                                echo "Error: " . $queryup . "<br>" . $conn->$error;
                             };
                         }
                         ?>
@@ -498,12 +492,13 @@ if (!isset($_SESSION['loggedin'])) {
                                 }
                                 $code = $_POST["code"];
                                 $nom = $_POST["nom"];
+                                $nom = str_replace("'", "\'", $nom);
                                 $ministere = $_POST["ministere"];
                                 $categ = $_POST["categ"];
                                 $addquery = "INSERT INTO `secteur`(`code`, `nom`, `type_minister`, `categorie`,`base_capital`)  VALUES ('$code','$nom','$ministere','$categ',$capital)";
                                 if ($conn->query($addquery) === TRUE) {
                                 } else {
-                                    echo "Error: " . $addquery . "<br>" . $conn->error;
+                                    echo "Error: " . $addquery . "<br>" . $conn->$error;
                                 };
                             };
                             ?>
@@ -566,43 +561,7 @@ if (!isset($_SESSION['loggedin'])) {
                 </div>
 
                 <!-- Content wrapper -->
-                <div class="card mb-4" style="margin-top: 12px;">
-                    <div class="demo-inline-spacing">
-                        <!-- Basic Pagination -->
-                        <nav aria-label="Page navigation">
-                            <ul class="pagination" style="padding-left: 1%;">
-                                <li class="page-item first">
-                                    <a class="page-link" href="javascript:void(0);"><i class="tf-icon bx bx-chevrons-left"></i></a>
-                                </li>
-                                <li class="page-item prev">
-                                    <a class="page-link" href="javascript:void(0);"><i class="tf-icon bx bx-chevron-left"></i></a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="javascript:void(0);">1</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="javascript:void(0);">2</a>
-                                </li>
-                                <li class="page-item active">
-                                    <a class="page-link" href="javascript:void(0);">3</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="javascript:void(0);">4</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="javascript:void(0);">5</a>
-                                </li>
-                                <li class="page-item next">
-                                    <a class="page-link" href="javascript:void(0);"><i class="tf-icon bx bx-chevron-right"></i></a>
-                                </li>
-                                <li class="page-item last">
-                                    <a class="page-link" href="javascript:void(0);"><i class="tf-icon bx bx-chevrons-right"></i></a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <!--/ Basic Pagination -->
-                    </div>
-                </div>
+                
             </div>
             <!-- / Layout page -->
         </div>
@@ -618,6 +577,19 @@ if (!isset($_SESSION['loggedin'])) {
                 var name = $('#' + id).children('td[data-target=name]').text();
                 $('#upcode').val(id);
                 $('#nomup').val(name);
+            });
+            $("#search").keyup(function() {
+                var search = $("#search").val()
+                $.ajax({
+                    url: 'searchsec.php',
+                    method: 'post',
+                    data: {
+                        ssecteur: search
+                    },
+                    success: function(response) {
+                        $('#tabledata').html(response);
+                    }
+                });
             });
         });
     </script>

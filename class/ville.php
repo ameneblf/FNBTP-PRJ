@@ -14,7 +14,7 @@ if (!isset($_SESSION['loggedin'])) {
 ?>
 <!DOCTYPE html>
 
-<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="assets/" data-template="vertical-menu-template-free">
+<html lang="fr" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="assets/" data-template="vertical-menu-template-free">
 
 <head>
     <meta charset="utf-8" />
@@ -63,7 +63,6 @@ if (!isset($_SESSION['loggedin'])) {
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
             <!-- Menu -->
-
             <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
                 <div class="app-brand demo">
                     <a href="../dashboard.php" class="app-brand-link">
@@ -78,7 +77,6 @@ if (!isset($_SESSION['loggedin'])) {
                 <div class="menu-inner-shadow"></div>
 
                 <ul class="menu-inner py-1">
-                    <!-- Dashboard -->
                     <li class="menu-item ">
                         <a href="../dashboard.php" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
@@ -89,57 +87,10 @@ if (!isset($_SESSION['loggedin'])) {
                     <li class="menu-item">
                         <a href="../Entreprises.php" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-buildings"></i>
-
                             <div data-i18n="Basic">Gestion d'Entreprises</div>
                         </a>
                     </li>
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-shield-alt-2"></i>
-                            <div data-i18n="Account Settings">Qualifications et Classifications</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                    <div data-i18n="Notifications">Ministere de l'Habitat</div>
-                                </a>
-                                <ul class="menu-sub">
-                                    <li class="menu-item">
-                                        <a href="../Demandehabitat.php" class="menu-link">
-                                            <div data-i18n="Account">Demande des Qualification et Classes</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="../table_comhabitat.php" class="menu-link">
-                                            <div data-i18n="Account">Etude de la Comande</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item">
-                                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                    <div data-i18n="Notifications">Ministere de l'Equipement</div>
-                                </a>
-                                <ul class="menu-sub">
-                                    <li class="menu-item">
-                                        <a href="../Demande.php" class="menu-link">
-                                            <div data-i18n="Account">Demande des Qualification et Classes</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="../table_com.php" class="menu-link">
-                                            <div data-i18n="Account">Etude de la Comande</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item ">
-                                        <a href="../equipement_comm.php" class="menu-link">
-                                            <div data-i18n="Account">Commission</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
+
                     <li class="menu-header small text-uppercase">
                         <span class="menu-header-text">OPERATIONS</span>
                     </li>
@@ -149,7 +100,7 @@ if (!isset($_SESSION['loggedin'])) {
                             <div data-i18n="Account Settings">Operation</div>
                         </a>
                         <ul class="menu-sub">
-                            <li class="menu-item ">
+                            <li class="menu-item">
                                 <a href="../adhesion.php" class="menu-link">
                                     <div data-i18n="Account">Adhésion</div>
                                 </a>
@@ -159,17 +110,43 @@ if (!isset($_SESSION['loggedin'])) {
                                     <div data-i18n="Notifications">Cotisation</div>
                                 </a>
                             </li>
-                            
+                            <li class="menu-item">
+                                <a href="../Qualification.php" class="menu-link">
+                                    <div data-i18n="Notifications">Saisie des QC</div>
+                                </a>
+                            </li>
+                            <li class="menu-item ">
+                                <a href="../mise_certif.php" class="menu-link">
+                                    <div data-i18n="Notifications">Certificats de QC</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                <a href="../demande_encou.php " class="menu-link">
+                  <div data-i18n="Notifications">Certificats encours</div>
+                </a>
+              </li>
+                            <!-- <li class="menu-item">
+                <a href="#" class="menu-link">
+                  <div data-i18n="Notifications">Formation</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="#" class="menu-link">
+                  <div data-i18n="Notifications">Reclamations</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="#" class="menu-link">
+                  <div data-i18n="Notifications">Journee Etude semminiare</div>
+                </a>
+              </li> -->
                         </ul>
                     </li>
-
-                    <li class="menu-header small text-uppercase">
-                        <span class="menu-header-text">Tableaux de Consultation</span>
-                    </li>
+                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Tableaux de Consultation</span></li>
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bxs-file-find "></i>
-                            <div data-i18n="Account Settings">Entreprise</div>
+                            <i class="menu-icon tf-icons bx bxs-file-find"></i>
+                            <div data-i18n="Account Settings">Recherche et Statistique</div>
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item ">
@@ -177,14 +154,18 @@ if (!isset($_SESSION['loggedin'])) {
                                     <div data-i18n="Connections">Adhésion et Qualification</div>
                                 </a>
                             </li>
+                            <li class="menu-item ">
+                                <a href="../consultation/recouvrement.php" class="menu-link">
+                                    <div data-i18n="Connections">Recouvrement</div>
+                                </a>
+                            </li>
                         </ul>
                     </li>
-                    <!-- Forms & Tables -->
-                    <li class="menu-header small text-uppercase">
-                        <span class="menu-header-text">Tableaux de setting</span>
-                    </li>
+
+                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Tableaux de setting</span></li>
+
                     <!-- Tables -->
-                    <li class="menu-item">
+                    <li class="menu-item active">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-key"></i>
                             <div data-i18n="Account Settings">Paramétres</div>
@@ -292,7 +273,7 @@ if (!isset($_SESSION['loggedin'])) {
                                         <div class="dropdown-divider"></div>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#">
+                                        <a class="dropdown-item" href="profile.php">
                                             <i class="bx bx-user me-2"></i>
                                             <span class="align-middle">Mon profil</span>
                                         </a>
@@ -302,7 +283,7 @@ if (!isset($_SESSION['loggedin'])) {
                                         echo "<li>
                                 <a class=\"dropdown-item\" href=\"../setting.php\">
                                 <i class=\"bx bx-cog me-2\"></i>
-                                <span class=\"align-middle\"> Settings</span>
+                                <span class=\"align-middle\"> Paramètres</span>
                                 </a>
                             </li>";
                                     }

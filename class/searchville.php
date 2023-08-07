@@ -54,5 +54,8 @@ if (isset($_POST["sville"])) {
     } else {
     $stmt = $conn->prepare("select * FROM `ville`");
 }
+}else{
+    header('refresh:0;url=404.php'); //2 s
+  exit();
 }
 ?>

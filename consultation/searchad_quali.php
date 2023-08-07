@@ -14,11 +14,13 @@ if (!isset($_SESSION['loggedin'])) {
 ?>
 <!DOCTYPE html>
 
-<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="assets/" data-template="vertical-menu-template-free">
+<html lang="fr" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="assets/"
+    data-template="vertical-menu-template-free">
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
     <title>Consultation</title>
 
@@ -30,7 +32,9 @@ if (!isset($_SESSION['loggedin'])) {
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet" />
 
     <!-- Icons. Uncomment required icon fonts -->
     <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
@@ -70,7 +74,8 @@ if (!isset($_SESSION['loggedin'])) {
                         <span class="app-brand-text demo menu-text fw-bolder ms-2">bienvenue</span>
                     </a>
 
-                    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+                    <a href="javascript:void(0);"
+                        class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
                         <i class="bx bx-chevron-left bx-sm align-middle"></i>
                     </a>
                 </div>
@@ -102,68 +107,33 @@ if (!isset($_SESSION['loggedin'])) {
                             <div data-i18n="Account Settings">Operation</div>
                         </a>
                         <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                    <div data-i18n="Account Settings">Qualifications et Classifications</div>
-                                </a>
-                                <ul class="menu-sub">
-                                    <li class="menu-item ">
-                                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                            <div data-i18n="Notifications">Ministere de l'Habitat</div>
-                                        </a>
-                                        <ul class="menu-sub">
-                                            <li class="menu-item ">
-                                                <a href="../Demandehabitat.php" class="menu-link">
-                                                    <div data-i18n="Account">Demande des Qualification et Classes</div>
-                                                </a>
-                                            </li>
-                                            <li class="menu-item">
-                                                <a href="../table_comhabitat.php" class="menu-link">
-                                                    <div data-i18n="Account">Etude de la Comande</div>
-                                                </a>
-                                            </li>
-                                            <li class="menu-item">
-                                                <a href="../habita_comm.php" class="menu-link">
-                                                    <div data-i18n="Account">Commission</div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                            <div data-i18n="Notifications">Ministere de l'Equipement</div>
-                                        </a>
-                                        <ul class="menu-sub ">
-                                            <li class="menu-item ">
-                                                <a href="../Demande.php" class="menu-link">
-                                                    <div data-i18n="Account">Demande des Qualification et Classes</div>
-                                                </a>
-                                            </li>
-                                            <li class="menu-item ">
-                                                <a href="../table_com.php" class="menu-link">
-                                                    <div data-i18n="Account">Etude de la Comande</div>
-                                                </a>
-                                            </li>
-                                            <li class="menu-item ">
-                                                <a href="../equipement_comm.php" class="menu-link">
-                                                    <div data-i18n="Account">Commission</div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
+
                             <li class="menu-item">
                                 <a href="../adhesion.php" class="menu-link">
                                     <div data-i18n="Account">Adhésion</div>
                                 </a>
                             </li>
-                            <li class="menu-item active">
+                            <li class="menu-item">
                                 <a href="../cotisation.php" class="menu-link">
                                     <div data-i18n="Notifications">Cotisation</div>
                                 </a>
                             </li>
                             <li class="menu-item">
+                                <a href="../Qualification.php" class="menu-link">
+                                    <div data-i18n="Notifications">Saisie des QC</div>
+                                </a>
+                            </li>
+                            <li class="menu-item ">
+                                <a href="../mise_certif.php" class="menu-link">
+                                    <div data-i18n="Notifications">Certificats de QC</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="../demande_encou.php" class="menu-link">
+                                    <div data-i18n="Notifications">Certificats encours</div>
+                                </a>
+                            </li>
+                            <!-- <li class="menu-item">
                                 <a href="#" class="menu-link">
                                     <div data-i18n="Notifications">Formation</div>
                                 </a>
@@ -177,11 +147,12 @@ if (!isset($_SESSION['loggedin'])) {
                                 <a href="#" class="menu-link">
                                     <div data-i18n="Notifications">Journee Etude semminiare</div>
                                 </a>
-                            </li>
+                            </li> -->
                         </ul>
                     </li>
-                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Tableaux de Consultation</span></li>
-                    <li class="menu-item">
+                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Tableaux de
+                            Consultation</span></li>
+                    <li class="menu-item active">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bxs-file-find"></i>
                             <div data-i18n="Account Settings">Recherche et Statistique</div>
@@ -192,11 +163,17 @@ if (!isset($_SESSION['loggedin'])) {
                                     <div data-i18n="Connections">Adhésion et Qualification</div>
                                 </a>
                             </li>
+                            <li class="menu-item">
+                                <a href="../consultation/recouvrement.php" class="menu-link">
+                                    <div data-i18n="Connections">Recouvrement</div>
+                                </a>
+                            </li>
                         </ul>
                     </li>
 
                     <!-- Forms & Tables -->
-                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Tableaux de setting</span></li>
+                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Tableaux de
+                            setting</span></li>
                     <!-- Tables -->
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -244,7 +221,8 @@ if (!isset($_SESSION['loggedin'])) {
             <div class="layout-page">
                 <!-- Navbar -->
 
-                <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
+                <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+                    id="layout-navbar">
                     <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
                         <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
                             <i class="bx bx-menu bx-sm"></i>
@@ -257,9 +235,11 @@ if (!isset($_SESSION['loggedin'])) {
                             <!-- Place this tag where you want the button to render. -->
                             <!-- User -->
                             <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
+                                    data-bs-toggle="dropdown">
                                     <div class="avatar avatar-online">
-                                        <img src="../assets/img/avatars/55.png" alt class="w-px-40 h-auto rounded-circle" />
+                                        <img src="../assets/img/avatars/55.png" alt
+                                            class="w-px-40 h-auto rounded-circle" />
                                     </div>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end">
@@ -268,7 +248,8 @@ if (!isset($_SESSION['loggedin'])) {
                                             <div class="d-flex">
                                                 <div class="flex-shrink-0 me-3">
                                                     <div class="avatar avatar-online">
-                                                        <img src="../assets/img/avatars/55.png" alt class="w-px-40 h-auto rounded-circle" />
+                                                        <img src="../assets/img/avatars/55.png" alt
+                                                            class="w-px-40 h-auto rounded-circle" />
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1">
@@ -297,7 +278,7 @@ if (!isset($_SESSION['loggedin'])) {
                                         <div class="dropdown-divider"></div>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#">
+                                        <a class="dropdown-item" href="profile.php">
                                             <i class="bx bx-user me-2"></i>
                                             <span class="align-middle">Mon profil</span>
                                         </a>
@@ -307,7 +288,7 @@ if (!isset($_SESSION['loggedin'])) {
                                         echo "<li>
                                 <a class=\"dropdown-item\" href=\"setting.php\">
                                 <i class=\"bx bx-cog me-2\"></i>
-                                <span class=\"align-middle\">Settings</span>
+                                <span class=\"align-middle\"> Paramètres</span>
                                 </a>
                             </li>";
                                     }
@@ -335,315 +316,1146 @@ if (!isset($_SESSION['loggedin'])) {
                     <div class="container-xxl container-p-y">
                         <div class="col-xxl">
                             <div class="card mb-4">
-                                <div class="card-body">
-                                    <div class="col-md">
-                                        <div class="form-check form-switch form-check-inline mb-3">
-                                            <input class="form-check-input" type="checkbox" id="checkadhesion">
-                                            <label class="form-check-label" for="checkadhesion">Adhésion</label>
-                                        </div>
-                                        <div class="form-check form-check-inline" id="adhesionselect" style="display: none;">
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Sélection par défaut</option>
-                                                <option value="ad">Adhérente</option>
-                                                <option value="nad">Non Adhérente</option>
-                                            </select>
+                                <form>
+                                    <div class="card-body">
+
+
+
+                                        <div class="table-responsive text-nowrap">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th></th>
+                                                        <th>Nombre d'entreprises</th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-check form-switch form-check-inline mb-3">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    id="checkadhesion">
+                                                                <label class="form-check-label"
+                                                                    for="checkadhesion">Adhésion</label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-check form-check-inline"
+                                                                id="adhesionselect" style="display: none;">
+                                                                <select class="form-select" id="adhes"
+                                                                    aria-label="Default select example">
+                                                                    <option value="no">Sélection par défaut</option>
+                                                                    <option value="1">Adhérente</option>
+                                                                    <option value="0">Non Adhérente</option>
+                                                                </select>
+                                                            </div>
+                                                        </td>
+                                                        <td id="nb_adh">
+                                                            <?php
+                                                            $societe = "SELECT count(*) FROM `societe`";
+                                                            $querys = mysqli_query($conn, $societe);
+                                                            $count = mysqli_fetch_row($querys);
+                                                            echo $count[0];
+                                                            ?>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-check form-switch form-check-inline mb-3">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    id="checkville">
+                                                                <label class="form-check-label"
+                                                                    for="checkville">Ville</label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-check form-check-inline" id="ville"
+                                                                style="display: none;">
+                                                                <select id="city" class="form-select"
+                                                                    aria-label="Default select example">
+                                                                    <option value="0" selected>Sélection par défaut
+                                                                    </option>
+                                                                    <?php
+                                                                    $sqlcateg = "SELECT * FROM `ville` where region=4";
+                                                                    $categ = mysqli_query($conn, $sqlcateg);
+                                                                    if (mysqli_num_rows($categ) > 0) {
+                                                                        while ($row = mysqli_fetch_assoc($categ)) {
+                                                                            echo "<option value=" . $row["nom"] . ">" . $row["nom"] . "</option>";
+                                                                        }
+                                                                    }
+                                                                    ?>
+                                                                </select>
+                                                            </div>
+                                                        </td>
+                                                        <td id="nb_par_ville">
+                                                            <?php
+                                                            $societe = "SELECT count(*) FROM `societe`";
+                                                            $querys = mysqli_query($conn, $societe);
+                                                            $count = mysqli_fetch_row($querys);
+                                                            echo $count[0];
+                                                            ?>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-check form-switch form-check-inline mb-3">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    id="checkcat">
+                                                                <label class="form-check-label"
+                                                                    for="checkcat">Categorie</label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-check form-check-inline" id="categ"
+                                                                style="display: none;">
+                                                                <select id="categorie" class="form-select"
+                                                                    aria-label="Default select example">
+                                                                    <option value="0">Sélection par défaut</option>
+                                                                    <?php
+                                                                    $sqlcateg = "SELECT * FROM `categ`";
+                                                                    $categ = mysqli_query($conn, $sqlcateg);
+                                                                    if (mysqli_num_rows($categ) > 0) {
+                                                                        while ($row = mysqli_fetch_assoc($categ)) {
+                                                                            echo "<option value=" . $row["code"] . ">" . $row["nom"] . "</option>";
+                                                                        }
+                                                                    }
+                                                                    ?>
+                                                                </select>
+                                                            </div>
+                                                        </td>
+                                                        <td id="nb_par_categ">
+                                                            <?php
+                                                            $societe = "SELECT count(*) FROM `societe`";
+                                                            $querys = mysqli_query($conn, $societe);
+                                                            $count = mysqli_fetch_row($querys);
+                                                            echo $count[0];
+                                                            ?>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-check form-switch form-check-inline mb-3"
+                                                                id="ministdiv">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    id="checkminis">
+                                                                <label class="form-check-label"
+                                                                    for="checkminis">Ministère</label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-check form-check-inline" id="minis"
+                                                                style="display: none;">
+                                                                <select class="form-select" id="ministere"
+                                                                    aria-label="Default select example">
+                                                                    <option value="0">Sélection par défaut</option>
+                                                                    <?php
+                                                                    $sqlministere = "SELECT * FROM `ministere`";
+                                                                    $ministere = mysqli_query($conn, $sqlministere);
+                                                                    if (mysqli_num_rows($ministere) > 0) {
+                                                                        while ($row = mysqli_fetch_assoc($ministere)) {
+                                                                            echo "<option value=" . $row["code"] . ">" . $row["nom"] . "</option>";
+                                                                        }
+                                                                    }
+                                                                    ?>
+                                                                </select>
+                                                            </div>
+                                                        </td>
+                                                        <td id="nb_par_minis">
+                                                            <?php
+                                                            $querysec = "SELECT COUNT(ministere) FROM qualification GROUP BY id_Entreprise;";
+                                                            $res = mysqli_query($conn, $querysec);
+                                                            $count1 = mysqli_num_rows($res);
+                                                            if ($count1 > 0) {
+                                                                echo $count1;
+                                                            } else
+                                                                echo 0;
+                                                            ?>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-check form-switch form-check-inline mb-3"
+                                                                id="sectdiv">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    id="checksect">
+                                                                <label class="form-check-label"
+                                                                    for="checksect">Secteur</label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-check form-check-inline" id="secteur"
+                                                                style="display: none;">
+                                                                <select class="form-select" id="sect"
+                                                                    aria-label="Default select example">
+                                                                    <option value="0">Sélection par défaut</option>
+                                                                    <?php
+                                                                    $sqlministere = "SELECT * FROM `secteur`";
+                                                                    $ministere = mysqli_query($conn, $sqlministere);
+                                                                    if (mysqli_num_rows($ministere) > 0) {
+                                                                        while ($row = mysqli_fetch_assoc($ministere)) {
+                                                                            echo "<option value=" . $row["code"] . ">" . $row["code"] . ":" . $row["nom"] . "</option>";
+                                                                        }
+                                                                    }
+                                                                    ?>
+                                                                </select>
+                                                            </div>
+                                                        </td>
+                                                        <td id="nb_par_secteur">
+                                                            <?php
+                                                            $querysec = "SELECT COUNT(secteur) FROM qualification GROUP BY id_Entreprise;";
+                                                            $res = mysqli_query($conn, $querysec);
+                                                            $count1 = mysqli_num_rows($res);
+                                                            if ($count1 > 0) {
+                                                                echo $count1;
+                                                            } else
+                                                                echo 0;
+                                                            ?>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-check form-switch form-check-inline mb-3"
+                                                                id="classdiv">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    id="checkclass">
+                                                                <label class="form-check-label"
+                                                                    for="checkclass">Classe</label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-check form-check-inline" id="classe"
+                                                                style="display: none;">
+                                                                <select class="form-select" id="class"
+                                                                    aria-label="Default select example">
+                                                                    <option selected>Sélection par défaut</option>
+                                                                </select>
+                                                            </div>
+                                                        </td>
+                                                        <td id="nb_par_class">
+                                                            <?php
+                                                            $querysec = "SELECT COUNT(secteur) FROM qualification GROUP BY id_Entreprise;";
+                                                            $res = mysqli_query($conn, $querysec);
+                                                            $count1 = mysqli_num_rows($res);
+                                                            if ($count1 > 0) {
+                                                                echo $count1;
+                                                            } else
+                                                                echo 0;
+                                                            ?>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-check form-switch form-check-inline mb-3"
+                                                                id="soussdiv">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    id="checksoussec">
+                                                                <label class="form-check-label"
+                                                                    for="checksoussec">Sous-secteur</label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-check form-check-inline" id="sosect"
+                                                                style="display: none;">
+                                                                <select class="form-select" id="qualiif"
+                                                                    aria-label="Default select example">
+                                                                    <option selected>Sélection par défaut</option>
+                                                                </select>
+                                                            </div>
+                                                        </td>
+                                                        <td id="nb_par_qualif">
+                                                            <?php
+                                                            $querysec = "SELECT COUNT(secteur) FROM qualification GROUP BY id_Entreprise;";
+                                                            $res = mysqli_query($conn, $querysec);
+                                                            $count1 = mysqli_num_rows($res);
+                                                            if ($count1 > 0) {
+                                                                echo $count1;
+                                                            } else
+                                                                echo 0;
+                                                            ?>
+                                                        </td>
+                                                    </tr>                                                    
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
-                                    <div class="col-md">
-                                        <div class="form-check form-check-inline mt-3">
-                                            <input class="form-check-input" type="checkbox" id="checkEchelle">
-                                            <label class="form-check-label" for="checkEchelle">Echelle Nationale</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="checkTT">
-                                            <label class="form-check-label" for="checkTT">TT Ministère</label>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div id="nation">
-                                        <div class="col-md">
-                                            <div class="form-check form-switch form-check-inline mb-3">
-                                                <input class="form-check-input" type="checkbox" id="checkregion">
-                                                <label class="form-check-label" for="checkregion">Région</label>
-                                            </div>
-                                            <div class="form-check form-check-inline" id="region" style="display: none;">
-                                                <select id="regio" class="form-select" aria-label="Default select example">
-                                                    <option selected>Sélection par défaut</option>
-                                                    <?php
-                                                    $sql1 = "SELECT * FROM `region`";
-                                                    $region = mysqli_query($conn, $sql1);
-                                                    if (mysqli_num_rows($region) > 0) {
-                                                        while ($row = mysqli_fetch_assoc($region)) {
-                                                            echo "<option value=" . $row["code"] . ">" . $row["nom"] . "</option>";
-                                                        }
-                                                    }
-                                                    ?>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md">
-                                            <div class="form-check form-switch form-check-inline mb-3">
-                                                <input class="form-check-input" type="checkbox" id="checkville">
-                                                <label class="form-check-label" for="checkville">Ville</label>
-                                            </div>
-                                            <div class="form-check form-check-inline" id="ville" style="display: none;">
-                                                <select id="city" class="form-select" aria-label="Default select example">
-                                                    <option selected>Sélection par défaut</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="col-md">
-                                        <div class="form-check form-switch form-check-inline mb-3" id="categdiv">
-                                            <input class="form-check-input" type="checkbox" id="checkcat">
-                                            <label class="form-check-label" for="checkcat">Categorie</label>
-                                        </div>
-                                        <div class="form-check form-check-inline" id="categ" style="display: none;">
-                                            <select id="categorie" class="form-select" aria-label="Default select example">
-                                                <option selected>Sélection par défaut</option>
-                                                <?php
-                                                $sqlcateg = "SELECT * FROM `categ`";
-                                                $categ = mysqli_query($conn, $sqlcateg);
-                                                if (mysqli_num_rows($categ) > 0) {
-                                                    while ($row = mysqli_fetch_assoc($categ)) {
-                                                        echo "<option value=" . $row["code"] . ">" . $row["nom"] . "</option>";
-                                                    }
-                                                }
-                                                ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md">
-                                        <div class="form-check form-switch form-check-inline mb-3" id="ministdiv">
-                                            <input class="form-check-input" type="checkbox" id="checkminis">
-                                            <label class="form-check-label" for="checkminis">Ministère</label>
-                                        </div>
-                                        <div class="form-check form-check-inline" id="minis" style="display: none;">
-                                            <select class="form-select" id="ministere" aria-label="Default select example">
-                                                <option selected>Sélection par défaut</option>
-                                                <?php
-                                                $sqlministere = "SELECT * FROM `ministere`";
-                                                $ministere = mysqli_query($conn, $sqlministere);
-                                                if (mysqli_num_rows($ministere) > 0) {
-                                                    while ($row = mysqli_fetch_assoc($ministere)) {
-                                                        echo "<option value=" . $row["code"] . ">" . $row["nom"] . "</option>";
-                                                    }
-                                                }
-                                                ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div id="desactivcat">
-                                    <div class="col-md">
-                                        <div class="form-check form-switch form-check-inline mb-3" id="sectdiv">
-                                            <input class="form-check-input" type="checkbox" id="checksect">
-                                            <label class="form-check-label" for="checksect">Secteur</label>
-                                        </div>
-                                        <div class="form-check form-check-inline" id="secteur" style="display: none;">
-                                            <select class="form-select" id="sect" aria-label="Default select example">
-                                                <option selected>Sélection par défaut</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md">
-                                        <div class="form-check form-switch form-check-inline mb-3" id="classdiv">
-                                            <input class="form-check-input" type="checkbox" id="checkclass">
-                                            <label class="form-check-label" for="checkclass">Classe</label>
-                                        </div>
-                                        <div class="form-check form-check-inline" id="classe" style="display: none;">
-                                            <select class="form-select" id="class" aria-label="Default select example">
-                                                <option selected>Sélection par défaut</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md">
-                                        <div class="form-check form-switch form-check-inline mb-3" id="soussdiv">
-                                            <input class="form-check-input" type="checkbox" id="checksoussec">
-                                            <label class="form-check-label" for="checksoussec">Sous-secteur</label>
-                                        </div>
-                                        <div class="form-check form-check-inline" id="sosect" style="display: none;">
-                                            <select class="form-select" id="qualiif" aria-label="Default select example">
-                                                <option selected>Sélection par défaut</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    </div>
-                                    <br>
                                     <div class="text-center mb-3">
                                         <div class="demo-inline-spacing">
-                                            <button type="button" class="btn btn-outline-secondary">OK</button>
-                                            <button type="button" class="btn btn-outline-secondary">Annuler</button>
-                                            <button type="button" class="btn btn-outline-secondary">Par Type Entreprise</button>
+                                            <button type="button" class="btn btn-outline-secondary" id="affiche"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#modalScrollable">affiche</button>
+                                            <button type="reset" id="reset"
+                                                class="btn btn-outline-secondary">Annuler</button>
                                         </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="modal fade" id="modalScrollable" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalLongTitle">table d'Entreprises</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="card">
+                                    <div class="table-responsive text-nowrap">
+                                        <table class="table">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Entreprises</th>
+                                                    <th>Copy le nom</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="table-border-bottom-0" id="data_select">
 
-                    <div class="table-responsive text-nowrap">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-                <!-- Content wrapper -->
+                <div class="table-responsive text-nowrap">
+                </div>
             </div>
-            <!-- / Layout page -->
+            <!-- Content wrapper -->
         </div>
-
-        <!-- Overlay -->
-        <div class="layout-overlay layout-menu-toggle"></div>
+        <!-- / Layout page -->
+    </div>
+    <div class="bs-toast toast toast-placement-ex m-2 fade bg-danger bottom-0 end-0 hide" role="alert"
+        aria-live="assertive" aria-atomic="true" data-delay="2000">
+        <div class="toast-header">
+            <i class="bx bx-bell me-2"></i>
+            <div class="me-auto fw-semibold">Erreur</div>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">Veuillez selectionner les champs !</div>
+    </div>
+    <div class="bs-toast toast toast-copy toast-placement-ex m-2 fade bg-success bottom-0 end-0 hide" role="alert"
+        aria-live="assertive" aria-atomic="true" data-delay="1000">
+        <div class="toast-header">
+            <i class="bx bx-bell me-2"></i>
+            <div class="me-auto fw-semibold">succès</div>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">Copie terminée avec succès!</div>
+    </div>
+    <!-- Overlay -->
+    <div class="layout-overlay layout-menu-toggle"></div>
     </div>
     <!-- / Layout wrapper -->
     <!-- Core JS -->
     <script>
-        $(document).ready(function() {
-            $("#checkadhesion").click(function() {
+        var toastPlacementsucce = document.querySelector('.toast-copy');
+        $(document).ready(function () {
+            var toastPlacementExample = document.querySelector('.toast-placement-ex');
+            const nb_entre = $("#nb_adh").text();
+            const nb_par_ville = $("#nb_par_ville").text();
+            const nb_par_categ = $("#nb_par_categ").text();
+            const nb_par_minis = $("#nb_par_minis").text();
+            const nb_par_secteur = $("#nb_par_secteur").text();
+            const nb_par_class = $("#nb_par_class").text();
+            const nb_par_qualif = $("#nb_par_qualif").text();
+            const nb_par_doss_encou = $("#nb_par_doss_encou").text();
+            $("#checkadhesion").click(function () {
                 if ($(this).is(":checked")) {
                     $("#adhesionselect").show();
+                    $("#nb_adh").text("0");
                 } else {
                     $("#adhesionselect").hide();
+                    $("#nb_adh").text(nb_entre);
+                    $("#adhes").val("no")
                 }
             });
+            $("#reset").click(function () {
+                $("#adhesionselect").hide();
+                $("#ville").hide();
+                $("#minis").hide();
+                $("#categ").hide();
+                $("#minis").hide();
+                $("#secteur").hide();
+                $("#classe").hide();
+                $("#sosect").hide();
+                $("#checkminis").attr("disabled", false);
+                $("#checksect").attr("disabled", false);
+                $("#checkclass").attr("disabled", false);
+                $("#checksoussec").attr("disabled", false);
+                $("#nb_adh").text(nb_entre);
+                $("#nb_par_ville").text(nb_par_ville);
+                $("#nb_par_minis").text(nb_par_minis);
+                $("#nb_par_categ").text(nb_par_categ);
+                $("#nb_par_secteur").text(nb_par_secteur);
+                $("#nb_par_class").text(nb_par_class);
+                $("#nb_par_qualif").text(nb_par_qualif);
+                $("#nb_par_doss_encou").text(nb_par_doss_encou);
+            }
 
-            $("#checkEchelle").click(function() {
-                if ($(this).is(":checked")) {
-                    $("#nation").hide();
-                } else {
-                    $("#nation").show();
-                }
-            });
-            $("#checkregion").click(function() {
-                if ($(this).is(":checked")) {
-                    $("#region").show();
-                } else {
-                    $("#region").hide();
-                }
-            });
-            $("#checkTT").click(function() {
-                if ($(this).is(":checked")) {
-                    $("#ministdiv").hide();
-                    $("#minis").hide();
-                    $("#sectdiv").hide();
-                    $("#secteur").hide();
-                    $("#classdiv").hide();
-                    $("#class").hide();
-                    $("#soussdiv").hide();
-                    $("#sosect").hide();
-                } else {
-                    $("#ministdiv").show();
-                    $("#sectdiv").show();
-                    $("#classdiv").show();
-                    $("#soussdiv").show();
-
-                }
-            });
-            $("#checkville").click(function() {
+            )
+            $("#checkville").click(function () {
                 if ($(this).is(":checked")) {
                     $("#ville").show();
+                    $("#nb_par_ville").text("0");
                 } else {
                     $("#ville").hide();
+                    $("#nb_par_ville").text(nb_par_ville);
+                    $("#city").val(0);
                 }
             });
-            $("#checkminis").click(function() {
+            $("#checkminis").click(function () {
                 if ($(this).is(":checked")) {
                     $("#minis").show();
+                    $("#nb_par_minis").text("0");
+
                 } else {
                     $("#minis").hide();
+                    $("#nb_par_minis").text(nb_par_minis);
+                    $("#ministere").val(0);
                 }
             });
-            $("#checkcat").click(function() {
+            $("#checkcat").click(function () {
                 if ($(this).is(":checked")) {
-                    $("#categ").show();
-                    $("#categorie").show();
                     $("#desactivcat").hide();
-                    
+                    $("#categorie").show();
+                    $("#checkminis").attr("disabled", true);
+                    $("#checkminis").prop('checked', false);
+                    $("#minis").hide();
+                    $("#checksect").attr("disabled", true);
+                    $("#checksect").prop('checked', false);
+                    $("#secteur").hide();
+                    $("#checkclass").attr("disabled", true);
+                    $("#checkclass").prop('checked', false);
+                    $("#classe").hide();
+                    $("#checksoussec").attr("disabled", true);
+                    $("#checksoussec").prop('checked', false);
+                    $("#sosect").hide();
+                    $("#nb_par_categ").text("0");
+                    $("#ministere").val(0);
                 } else {
-                    $("#categ").hide();
+
+                    $("#nb_par_categ").text(nb_par_categ);
                     $("#categorie").hide();
                     $("#desactivcat").show();
+                    $("#checkminis").attr("disabled", false);
+                    $("#checksect").attr("disabled", false);
+                    $("#checkclass").attr("disabled", false);
+                    $("#checksoussec").attr("disabled", false);
                 }
             });
-            $('#ministere').change(function() {
-                var ministere = $(this).val();
-                if (ministere != 0) {
+            $("#checkcat").click(function () {
+                if ($(this).is(":checked")) {
+                    $("#categ").show();
+                } else {
+                    $("#categ").hide();
+                }
+            });
+            $("#checksect").click(function () {
+                if ($(this).is(":checked")) {
+                    $("#secteur").show();
+                    $("#nb_par_secteur").text("0");
                     $.get(
                         "../aax.php", {
-                            ministere: ministere
-                        },
-                        function(data) {
+                        allsect: ""
+                    },
+                        function (data) {
                             $('#sect').html(data);
                         }
                     );
-                } 
-            }); 
-            $("#checkcat").click(function() {
-                if ($(this).is(":checked")) {
-                    $("#categ").show();
-                } else {
-                    $("#categ").hide();
-                }
-            });
-            $("#checksect").click(function() {
-                if ($(this).is(":checked")) {
-                    $("#secteur").show();
                 } else {
                     $("#secteur").hide();
+                    $("#nb_par_secteur").text(nb_par_secteur);
                 }
             });
-            $("#checkclass").click(function() {
+            $("#checkclass").click(function () {
                 if ($(this).is(":checked")) {
                     $("#classe").show();
+                    $("#nb_par_class").text("0");
                 } else {
                     $("#classe").hide();
+                    $("#nb_par_class").text(nb_par_class);
                 }
             });
-            $("#checksoussec").click(function() {
+            $("#checksoussec").click(function () {
                 if ($(this).is(":checked")) {
                     $("#sosect").show();
+                    $("#nb_par_qualif").text("0");
                 } else {
                     $("#sosect").hide();
+                    $("#nb_par_qualif").text(nb_par_qualif);
                 }
             });
-            $('#regio').change(function() {
-                var regionID = $(this).val();
-                if (regionID) {
-                    $.get(
-                        "../ajax.php", {
-                            region_id: regionID
-                        },
-                        function(data) {
-                            $('#city').html(data);
+            $("#adhes").change(function () {
+                var adhes = $(this).val();
+                toastPlacement = new bootstrap.Toast(toastPlacementExample);
+
+                if (adhes == 0 || adhes == 1) {
+
+                    $.post(
+                        "static.php", {
+                        adhes: adhes,
+                    },
+                        function (data) {
+                            //console.log(data);
+                            $('#data_select').html(data);
+                            $('#nb_adh').text($("#data_select tr").length);
                         }
                     );
                 } else {
-                    $("#city").empty();
+                    toastPlacement.show();
+
                 }
             });
-            $('#sect').change(function() {
+
+            $("#city").change(function () {
+                var city = $(this).val();
+                var adher = $("#adhes").val();
+                toastPlacement = new bootstrap.Toast(toastPlacementExample);
+                if ($("#checkadhesion").is(":checked")) {
+                    if ((adher == 0) || (adher == 1)) {
+
+
+                        $.get(
+                            "static.php", {
+                            'cityadher': "",
+                            'city': city,
+                            'adhes': adher
+                        },
+                            function (data1) {
+                                //console.log(data);
+                                $('#data_select').html(data1);
+                                $('#nb_par_ville').text($("#data_select tr").length);
+                            }
+                        );
+
+                    } else {
+                        toastPlacement.show();
+                        $(this).val(0);
+                    }
+                } else {
+                    $.get(
+                        "static.php", {
+                        bycity: '',
+                        city: city,
+                    },
+                        function (data) {
+                            $('#data_select').html(data);
+                            $('#nb_par_ville').text($("#data_select tr").length);
+                        }
+                    );
+                }
+            });
+            //categorie
+            $("#categorie").change(function () {
+                var categ = $(this).val();
+                var city = $("#city").val();
+                var adher = $("#adhes").val();
+                toastPlacement = new bootstrap.Toast(toastPlacementExample);
+                if ($("#checkadhesion").is(":checked") && $("#checkville").is(":checked")) {
+                    if (((adher == 0) || (adher == 1)) && city != 0 && categ != 0) {
+                        $.get(
+                            "static.php", {
+                            'categcityadher': "",
+                            'city': city,
+                            'adhes': adher,
+                            'categ': categ
+                        },
+                            function (data) {
+                                $('#data_select').html(data);
+                                $('#nb_par_categ').text($("#data_select tr").length);
+                            }
+                        );
+                    } else {
+                        toastPlacement.show();
+                        //$(this).val(0);
+                    }
+                }
+                if ($("#checkadhesion").is(":checked")) {
+                    if (((adher == 0) || (adher == 1)) && categ != 0 && !$("#checkville").is(":checked")) {
+                        $.get(
+                            "static.php", {
+                            'categadher': "",
+                            'adhes': adher,
+                            'categ': categ
+                        },
+                            function (data) {
+                                $('#data_select').html(data);
+                                $('#nb_par_categ').text($("#data_select tr").length);
+                            }
+                        );
+                    } else {
+                    }
+                }
+                if ($("#checkville").is(":checked")) {
+                    if (city != 0 && categ != 0 && !$("#checkadhesion").is(":checked")) {
+                        $.ajax({
+                            url: "static.php",
+                            method: "get",
+                            data: {
+                                'categcity': "",
+                                'city': city,
+                                'categ': categ
+                            },
+                            success: function (response) {
+                                $('#data_select').html(response);
+                                $('#nb_par_categ').text($("#data_select tr").length);
+                            }
+                        });
+                    } else {
+                    }
+                }
+                if (!$("#checkadhesion").is(":checked") && !$("#checkville").is(":checked")) {
+                    $.get(
+                        "static.php", {
+                        bycateg: '',
+                        categ: categ,
+                    },
+                        function (data) {
+                            $('#data_select').html(data);
+                            $('#nb_par_categ').text($("#data_select tr").length);
+                        }
+                    );
+                }
+            });
+            //minister
+            $("#ministere").change(function () {
+                var minis = $(this).val();
+                var city = $("#city").val();
+                var adher = $("#adhes").val();
+                if (minis != 0) {
+                    $.get(
+                        "../aax.php", {
+                        minis: minis
+                    },
+                        function (data) {
+                            $('#sect').html(data);
+                        }
+                    );
+                }
+                toastPlacement = new bootstrap.Toast(toastPlacementExample);
+                if ($("#checkadhesion").is(":checked") && $("#checkville").is(":checked")) {
+                    if (((adher == 0) || (adher == 1)) && city != 0 && minis != 0) {
+                        $.ajax({
+                            url: "static.php",
+                            method: "get",
+                            data: {
+                                'miniscityadher': "",
+                                'city': city,
+                                'adhes': adher,
+                                'minis': minis
+                            },
+                            success: function (response) {
+                                $('#data_select').html(response);
+                                $('#nb_par_minis').text($("#data_select tr").length);
+                            }
+                        });
+                    } else {
+                        toastPlacement.show();
+                    }
+                }
+                if ($("#checkadhesion").is(":checked") && !$("#checkville").is(":checked")) {
+                    if (((adher == 0) || (adher == 1)) && minis != 0 && !$("#checkville").is(":checked")) {
+
+                        $.ajax({
+                            url: "static.php",
+                            method: "get",
+                            data: {
+                                'minisadher': "",
+                                'adhes': adher,
+                                'minis': minis
+                            },
+                            success: function (response) {
+                                $('#data_select').html(response);
+                                $('#nb_par_minis').text($("#data_select tr").length);
+                            }
+                        });
+                    } else {
+                        toastPlacement.show();
+                        $(this).val(0);
+                    }
+                }
+                if ($("#checkville").is(":checked") && !$("#checkadhesion").is(":checked")) {
+                    if (city != 0 && minis != 0 && !$("#checkadhesion").is(":checked")) {
+                        $.ajax({
+                            url: "static.php",
+                            method: "get",
+                            data: {
+                                'miniscity': "",
+                                'city': city,
+                                'minis': minis
+                            },
+                            success: function (response) {
+                                $('#data_select').html(response);
+                                $('#nb_par_minis').text($("#data_select tr").length);
+                            }
+                        });
+                    } else {
+                        toastPlacement.show();
+                        $(this).val(0);
+                    }
+                }
+                if (!$("#checkadhesion").is(":checked") && !$("#checkville").is(":checked")) {
+                    $.get(
+                        "static.php", {
+                        byminis: '',
+                        minis: minis,
+                    },
+                        function (data) {
+                            $('#data_select').html(data);
+                            $('#nb_par_minis').text($("#data_select tr").length);
+                        }
+                    );
+                }
+            });
+            //secteur******************************************
+            $("#sect").change(function () {
+                var sect = $(this).val();
+                var city = $("#city").val();
+                var minis = $("#ministere").val();
+                var adher = $("#adhes").val();
+
+                toastPlacement = new bootstrap.Toast(toastPlacementExample);
+                if ($("#checkadhesion").is(":checked") && $("#checkville").is(":checked") && $("#checkminis").is(":checked")) {
+                    if (((adher == 0) || (adher == 1)) && city != 0 && minis != 0 && sect != 0) {
+                        $.ajax({
+                            url: "static.php",
+                            method: "get",
+                            data: {
+                                'sectminiscityadher': "",
+                                'city': city,
+                                'adhes': adher,
+                                'minis': minis,
+                                'sect': sect
+                            },
+                            success: function (response) {
+                                $('#data_select').html(response);
+                                $('#nb_par_secteur').text($("#data_select tr").length);
+                            }
+                        });
+                    } else {
+                        toastPlacement.show();
+                    }
+                }
+                if ($("#checkadhesion").is(":checked") && $("#checkville").is(":checked") && !$("#checkminis").is(":checked")) {
+                    if (((adher == 0) || (adher == 1)) && city != 0 && minis == 0 && sect != 0) {
+                        $.ajax({
+                            url: "static.php",
+                            method: "get",
+                            data: {
+                                'sectcityadher': "",
+                                'city': city,
+                                'adhes': adher,
+                                'sect': sect
+                            },
+                            success: function (response) {
+                                $('#data_select').html(response);
+                                $('#nb_par_secteur').text($("#data_select tr").length);
+                            }
+                        });
+                    } else {
+                        toastPlacement.show();
+                    }
+                }
+                if ($("#checkadhesion").is(":checked") && !$("#checkville").is(":checked") && $("#checkminis").is(":checked")) {
+                    if (((adher == 0) || (adher == 1)) && city == 0 && minis != 0 && sect != 0) {
+                        $.ajax({
+                            url: "static.php",
+                            method: "get",
+                            data: {
+                                'sectminisadher': "",
+                                'minis': minis,
+                                'adhes': adher,
+                                'sect': sect
+                            },
+                            success: function (response) {
+                                $('#data_select').html(response);
+                                $('#nb_par_secteur').text($("#data_select tr").length);
+                            }
+                        });
+                    } else {
+                        toastPlacement.show();
+                    }
+                }
+                if ($("#checkadhesion").is(":checked") && !$("#checkville").is(":checked") && !$("#checkminis").is(":checked")) {
+                    if (((adher == 0) || (adher == 1)) && city == 0 && minis == 0 && sect != 0) {
+                        $.ajax({
+                            url: "static.php",
+                            method: "get",
+                            data: {
+                                'sectadher': "",
+                                'adhes': adher,
+                                'sect': sect
+                            },
+                            success: function (response) {
+                                $('#data_select').html(response);
+                                $('#nb_par_secteur').text($("#data_select tr").length);
+                            }
+                        });
+                    } else {
+                        toastPlacement.show();
+                    }
+                }
+                if (!$("#checkadhesion").is(":checked") && $("#checkville").is(":checked") && $("#checkminis").is(":checked")) {
+                    if (!((adher == 0) || (adher == 1)) && city != 0 && minis != 0 && sect != 0) {
+                        $.ajax({
+                            url: "static.php",
+                            method: "get",
+                            data: {
+                                'sectminiscity': "",
+                                'city': city,
+                                'minis': minis,
+                                'sect': sect
+                            },
+                            success: function (response) {
+                                $('#data_select').html(response);
+                                $('#nb_par_secteur').text($("#data_select tr").length);
+                            }
+                        });
+                    } else {
+                        toastPlacement.show();
+                    }
+                }
+                if (!$("#checkadhesion").is(":checked") && $("#checkville").is(":checked") && !$("#checkminis").is(":checked")) {
+                    if (!((adher == 0) || (adher == 1)) && city != 0 && minis == 0 && sect != 0) {
+                        $.ajax({
+                            url: "static.php",
+                            method: "get",
+                            data: {
+                                'sectcity': "",
+                                'city': city,
+                                'sect': sect
+                            },
+                            success: function (response) {
+                                $('#data_select').html(response);
+                                $('#nb_par_secteur').text($("#data_select tr").length);
+                            }
+                        });
+                    } else {
+                        toastPlacement.show();
+                    }
+                }
+                if (!$("#checkadhesion").is(":checked") && !$("#checkville").is(":checked") && $("#checkminis").is(":checked")) {
+                    if (!((adher == 0) || (adher == 1)) && city == 0 && minis != 0 && sect != 0) {
+                        $.ajax({
+                            url: "static.php",
+                            method: "get",
+                            data: {
+                                'sectminis': "",
+                                'minis': minis,
+                                'sect': sect
+                            },
+                            success: function (response) {
+                                $('#data_select').html(response);
+                                $('#nb_par_secteur').text($("#data_select tr").length);
+                            }
+                        });
+                    } else {
+                        toastPlacement.show();
+                    }
+                }
+            });
+            //class**********************
+            $("#class").change(function () {
+                var classe = $(this).val();
+                var sect = $("#sect").val();
+                var city = $("#city").val();
+                var minis = $("#ministere").val();
+                var adher = $("#adhes").val();
+                toastPlacement = new bootstrap.Toast(toastPlacementExample);
+                if ($("#checkadhesion").is(":checked") && $("#checkville").is(":checked") && $("#checkminis").is(":checked") && $("#checksect").is(":checked")) {
+                    if (((adher == 0) || (adher == 1)) && city != 0 && minis != 0 && sect != 0 && classe != 0) {
+                        $.ajax({
+                            url: "static.php",
+                            method: "get",
+                            data: {
+                                'sectminiscityadherclass': "",
+                                'city': city,
+                                'adhes': adher,
+                                'minis': minis,
+                                'sect': sect,
+                                'classe': classe
+                            },
+                            success: function (response) {
+                                $('#data_select').html(response);
+                                $('#nb_par_class').text($("#data_select tr").length);
+                            }
+                        });
+                    } else {
+                        toastPlacement.show();
+                    }
+                }
+                if (!$("#checkadhesion").is(":checked") && $("#checkville").is(":checked") && $("#checkminis").is(":checked") && $("#checksect").is(":checked")) {
+                    if (!((adher == 0) || (adher == 1)) && city != 0 && minis != 0 && sect != 0 && classe != 0) {
+                        $.ajax({
+                            url: "static.php",
+                            method: "get",
+                            data: {
+                                'sectminiscityclass': "",
+                                'city': city,
+                                'minis': minis,
+                                'sect': sect,
+                                'classe': classe
+                            },
+                            success: function (response) {
+                                $('#data_select').html(response);
+                                $('#nb_par_class').text($("#data_select tr").length);
+                            }
+                        });
+                    } else {
+                        toastPlacement.show();
+                    }
+                }
+                if ($("#checkadhesion").is(":checked") && !$("#checkville").is(":checked") && $("#checkminis").is(":checked") && $("#checksect").is(":checked")) {
+                    if (((adher == 0) || (adher == 1)) && city == 0 && minis != 0 && sect != 0 && classe != 0) {
+                        $.ajax({
+                            url: "static.php",
+                            method: "get",
+                            data: {
+                                'sectminisadherclass': "",
+                                'adhes': adher,
+                                'minis': minis,
+                                'sect': sect,
+                                'classe': classe
+                            },
+                            success: function (response) {
+                                $('#data_select').html(response);
+                                $('#nb_par_class').text($("#data_select tr").length);
+                            }
+                        });
+                    } else {
+                        toastPlacement.show();
+                    }
+                }
+                if (!$("#checkadhesion").is(":checked") && !$("#checkville").is(":checked") && $("#checkminis").is(":checked") && $("#checksect").is(":checked")) {
+                    if (!((adher == 0) || (adher == 1)) && city == 0 && minis != 0 && sect != 0 && classe != 0) {
+                        $.ajax({
+                            url: "static.php",
+                            method: "get",
+                            data: {
+                                'sectminisclass': "",
+                                'minis': minis,
+                                'sect': sect,
+                                'classe': classe
+                            },
+                            success: function (response) {
+                                $('#data_select').html(response);
+                                $('#nb_par_class').text($("#data_select tr").length);
+                            }
+                        });
+                    } else {
+                        toastPlacement.show();
+                    }
+                }
+            });
+
+            $('#sect').change(function () {
                 var secteuur = $(this).val();
                 if (secteuur != 0) {
                     $.get(
                         "../Gclass.php", {
-                            sec: secteuur,
-                        },
-                        function(data) {
+                        sec: secteuur,
+                    },
+                        function (data) {
                             //console.log(data);
                             $('#class').html(data);
                         }
                     );
                     $.get(
                         "../Gclass.php", {
-                            secquali: secteuur,
-                        },
-                        function(data) {
+                        secquali: secteuur,
+                    },
+                        function (data) {
                             //console.log(data);
                             $('#qualiif').html(data);
                         }
                     );
-                } 
+                }
             });
-            
+            $("#qualiif").change(function () {
+                var qualiif = $(this).val();
+                var classe = $("#class").val();
+                var sect = $("#sect").val();
+                var city = $("#city").val();
+                var minis = $("#ministere").val();
+                var adher = $("#adhes").val();
+                if ($("#checkadhesion").is(":checked") && $("#checkville").is(":checked") && $("#checkminis").is(":checked") && $("#checksect").is(":checked") && $("#checkclass").is(":checked")) {
+                    //console.log(qualiif +" "+ classe +" "+ sect +" "+ city +" "+minis+" "+adher);
+                    if (((adher == 0) || (adher == 1)) && city != 0 && minis != 0 && sect != 0 && classe != 0) {
+                        $.ajax({
+                            url: "static.php",
+                            method: "get",
+                            data: {
+                                'all': "",
+                                'adher': adher,
+                                'city': city,
+                                'minis': minis,
+                                'sect': sect,
+                                'classe': classe,
+                                'qualiif': qualiif
+                            },
+                            success: function (response) {
+                                $('#data_select').html(response);
+                                $('#nb_par_qualif').text($("#data_select tr").length);
+                            }
+                        });
+                    } else {
+                        toastPlacement.show();
+                    }
+                }
+                if (!$("#checkadhesion").is(":checked") && $("#checkville").is(":checked") && $("#checkminis").is(":checked") && $("#checksect").is(":checked") && $("#checkclass").is(":checked")) {
+                    //console.log(qualiif +" "+ classe +" "+ sect +" "+ city +" "+minis+" "+adher);
+                    if (!((adher == 0) || (adher == 1)) && city != 0 && minis != 0 && sect != 0 && classe != 0) {
+                        $.ajax({
+                            url: "static.php",
+                            method: "get",
+                            data: {
+                                'allwhitoutadh': "",
+                                'city': city,
+                                'minis': minis,
+                                'sect': sect,
+                                'classe': classe,
+                                'qualiif': qualiif
+                            },
+                            success: function (response) {
+                                $('#data_select').html(response);
+                                $('#nb_par_qualif').text($("#data_select tr").length);
+                            }
+                        });
+                    } else {
+                        toastPlacement.show();
+                    }
+                }
+                if ($("#checkadhesion").is(":checked") && !$("#checkville").is(":checked") && $("#checkminis").is(":checked") && $("#checksect").is(":checked") && $("#checkclass").is(":checked")) {
+                    //console.log(qualiif +" "+ classe +" "+ sect +" "+ city +" "+minis+" "+adher);
+                    if (((adher == 0) || (adher == 1)) && city == 0 && minis != 0 && sect != 0 && classe != 0) {
+                        $.ajax({
+                            url: "static.php",
+                            method: "get",
+                            data: {
+                                'allwhitoutcity': "",
+                                'adher': adher,
+                                'minis': minis,
+                                'sect': sect,
+                                'classe': classe,
+                                'qualiif': qualiif
+                            },
+                            success: function (response) {
+                                $('#data_select').html(response);
+                                $('#nb_par_qualif').text($("#data_select tr").length);
+                            }
+                        });
+                    } else {
+                        toastPlacement.show();
+                    }
+                }
+                if (!$("#checkadhesion").is(":checked") && !$("#checkville").is(":checked") && $("#checkminis").is(":checked") && $("#checksect").is(":checked") && $("#checkclass").is(":checked")) {
+                    //console.log(qualiif +" "+ classe +" "+ sect +" "+ city +" "+minis+" "+adher);
+                    if (!((adher == 0) || (adher == 1)) && city == 0 && minis != 0 && sect != 0 && classe != 0) {
+                        $.ajax({
+                            url: "static.php",
+                            method: "get",
+                            data: {
+                                'allwhitoutcityandadher': "",
+                                'minis': minis,
+                                'sect': sect,
+                                'classe': classe,
+                                'qualiif': qualiif
+                            },
+                            success: function (response) {
+                                $('#data_select').html(response);
+                                $('#nb_par_qualif').text($("#data_select tr").length);
+                            }
+                        });
+                    } else {
+                        toastPlacement.show();
+                    }
+                }
+                if (!$("#checkadhesion").is(":checked") && !$("#checkville").is(":checked") && $("#checkminis").is(":checked") && $("#checksect").is(":checked") && !$("#checkclass").is(":checked")) {
+                    //console.log(qualiif +" "+ classe +" "+ sect +" "+ city +" "+minis+" "+adher);
+                    if (!((adher == 0) || (adher == 1)) && city == 0 && minis != 0 && sect != 0 && classe == 0) {
+                        $.ajax({
+                            url: "static.php",
+                            method: "get",
+                            data: {
+                                'allwhitoutcityandadherandclass': "",
+                                'minis': minis,
+                                'sect': sect,
+                                'qualiif': qualiif
+                            },
+                            success: function (response) {
+                                $('#data_select').html(response);
+                                $('#nb_par_qualif').text($("#data_select tr").length);
+                            }
+                        });
+                    } else {
+                        toastPlacement.show();
+                    }
+                }
+                if (!$("#checkadhesion").is(":checked") && $("#checkville").is(":checked") && $("#checkminis").is(":checked") && $("#checksect").is(":checked") && !$("#checkclass").is(":checked")) {
+                    //console.log(qualiif +" "+ classe +" "+ sect +" "+ city +" "+minis+" "+adher);
+                    if (!((adher == 0) || (adher == 1)) && city != 0 && minis != 0 && sect != 0 && classe == 0) {
+                        $.ajax({
+                            url: "static.php",
+                            method: "get",
+                            data: {
+                                'allwhitoutadherandclass': "",
+                                'minis': minis,
+                                'sect': sect,
+                                'city': city,
+                                'qualiif': qualiif
+                            },
+                            success: function (response) {
+                                $('#data_select').html(response);
+                                $('#nb_par_qualif').text($("#data_select tr").length);
+                            }
+                        });
+                    } else {
+                        toastPlacement.show();
+                    }
+                }
+                if ($("#checkadhesion").is(":checked") && !$("#checkville").is(":checked") && $("#checkminis").is(":checked") && $("#checksect").is(":checked") && !$("#checkclass").is(":checked")) {
+                    //console.log(qualiif +" "+ classe +" "+ sect +" "+ city +" "+minis+" "+adher);
+                    if (((adher == 0) || (adher == 1)) && city == 0 && minis != 0 && sect != 0 && classe == 0) {
+                        $.ajax({
+                            url: "static.php",
+                            method: "get",
+                            data: {
+                                'allwhitoutcityandclass': "",
+                                'minis': minis,
+                                'sect': sect,
+                                'adher': adher,
+                                'qualiif': qualiif
+                            },
+                            success: function (response) {
+                                $('#data_select').html(response);
+                                $('#nb_par_qualif').text($("#data_select tr").length);
+                            }
+                        });
+                    } else {
+                        toastPlacement.show();
+                    }
+                }
+            });
+            $("#affiche").click(function () {
+                $("#reset").trigger("click");
+
+            });
+
         });
+        function copy(id) {
+            var name = $("#" + id).find("td:eq(0)").text();
+            //var id = enrow.attr('id');
+            navigator.clipboard.writeText(name);
+            toastPlacement = new bootstrap.Toast(toastPlacementsucce);
+            toastPlacement.show();
+
+        };
     </script>
     <!-- build:js assets/vendor/js/core.js -->
     <script src="../assets/vendor/libs/jquery/jquery.js"></script>
@@ -659,6 +1471,8 @@ if (!isset($_SESSION['loggedin'])) {
 
     <!-- Main JS -->
     <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/ui-toasts.js"></script>
+    <!--<script src="../assets/js/ui-modals.js"></script>-->
 
     <!-- Page JS -->
     <script src="../assets/js/dashboards-analytics.js"></script>
