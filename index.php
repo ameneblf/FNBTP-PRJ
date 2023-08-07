@@ -4,7 +4,7 @@ include_once('db/connexion.php');
 error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,8 +17,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
     <link rel="icon" type="image/x-icon" href="assets/img/favicon/Asset 1.png" />
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
     <link
       href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"

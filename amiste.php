@@ -32,3 +32,7 @@ if (isset($_GET["amnist"])) {
     }
     
 }
+else{
+    header('refresh:0;url=404.php'); //2 s
+  exit();
+}

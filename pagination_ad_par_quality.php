@@ -13,14 +13,17 @@ if (!isset($_SESSION['loggedin'])) {
 }
 $record_per_page = 25;
 $page = '';
+$quality;
 
 if (isset($_POST["page"])) {
   $page = $_POST["page"];
+  $quality=$_POST["quality"];
 } else {
   $page = 1;
+  
 }
 $start_from = ($page - 1) * $record_per_page;
-$sql = "SELECT * FROM `adhesion`ORDER BY ENTREPRISE ASC LIMIT $start_from, $record_per_page;";
+$sql = "SELECT * FROM `adhesion` where qualite_membre=$quality ORDER BY ENTREPRISE ASC LIMIT $start_from, $record_per_page;";
 $query = mysqli_query($conn, $sql);
 if (mysqli_num_rows($query) > 0) {
   while ($row = mysqli_fetch_assoc($query)) {

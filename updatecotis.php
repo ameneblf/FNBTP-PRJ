@@ -18,7 +18,7 @@ if (!isset($_SESSION['loggedin'])) {
         <form action="cotisation.php" method="get">
             <div class="modal-content container-xxl">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalCenterTitle">Edite Cotisation</h5>
+                    <h5 class="modal-title" id="modalCenterTitle">Mise a jour de Cotisation</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="card-body">
@@ -62,17 +62,17 @@ if (!isset($_SESSION['loggedin'])) {
                             <label class="form-label" for="basic-icon-default-bank">Banque</label>
                             <div class="input-group input-group-phone">
                                 <span id="basic-icon-calendar" class="input-group-text"><i class="bx bxs-bank"></i></span>
-                                <select id="banque" name="banque" class="form-select">
+                                <select id="banque_up" name="banque_up" class="form-select">
                                     <option value="0">Sélection par défaut</option>
                                     <?php
                                     $sqlq = "SELECT * FROM `banque`";
                                     $resul = mysqli_query($conn, $sqlq);
                                     if (mysqli_num_rows($resul) > 0) {
                                         while ($i = mysqli_fetch_assoc($resul)) {
-                                            echo "<option value=" . $i["code"] . ">" . $i["Nom"] . "</option>";
+                                            echo "<option value=". $i["code"] . ">" . $i["Nom"] . "</option>";
                                         }
                                     } else {
-                                        echo "Error: "  . $conn->error;
+                                        echo "Error: "  . $conn->$error;
                                     };
                                     ?>
                                 </select>
@@ -81,7 +81,7 @@ if (!isset($_SESSION['loggedin'])) {
                     </div>
                     <div class="row g-2">
                         <div class="col mb-0" id="nbch">
-                            <label class="form-label" for="basic-icon-default-note">N Cheque</label>
+                            <label class="form-label" for="basic-icon-default-note">Numero</label>
                             <div class="input-group input-group-merge">
                                 <span id="basic-icon-dollar" class="input-group-text"><i class="bx bx-code"></i></span>
                                 <input type="text" name="nb_cheque" id="nb_cheque" class="form-control" placeholder="XXXXX" aria-label="code" aria-describedby="basic-icon-default-code">

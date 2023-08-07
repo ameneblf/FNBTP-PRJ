@@ -2,23 +2,25 @@
 session_start();
 include_once('db/connexion.php');
 /* if($_SESSION['loggedin'] = TRUE){
- echo $_SESSION['name'];
- echo $_SESSION['id'] ;
- }else{
- echo "echec";
- }*/
+echo $_SESSION['name'];
+echo $_SESSION['id'] ;
+}else{
+echo "echec";
+}*/
 if (!isset($_SESSION['loggedin'])) {
-    header('refresh:0;url=404.php'); //2 s
+    header('refresh:0;url=/404.php'); //2 s
     exit();
 }
 ?>
 <!DOCTYPE html>
 
-<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="assets/" data-template="vertical-menu-template-free">
+<html lang="fr" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="assets/"
+    data-template="vertical-menu-template-free">
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
     <title>Cotisation</title>
 
@@ -30,7 +32,9 @@ if (!isset($_SESSION['loggedin'])) {
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet" />
 
     <!-- Icons. Uncomment required icon fonts -->
     <link rel="stylesheet" href="assets/vendor/fonts/boxicons.css" />
@@ -51,7 +55,8 @@ if (!isset($_SESSION['loggedin'])) {
 
     <!-- Helpers -->
     <script src="assets/vendor/js/helpers.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="assets/js/config.js"></script>
@@ -68,7 +73,8 @@ if (!isset($_SESSION['loggedin'])) {
                         <span class="app-brand-text demo menu-text fw-bolder ms-2">bienvenue</span>
                     </a>
 
-                    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+                    <a href="javascript:void(0);"
+                        class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
                         <i class="bx bx-chevron-left bx-sm align-middle"></i>
                     </a>
                 </div>
@@ -94,7 +100,7 @@ if (!isset($_SESSION['loggedin'])) {
                     <li class="menu-header small text-uppercase">
                         <span class="menu-header-text">OPERATIONS</span>
                     </li>
-                    <li class="menu-item">
+                    <li class="menu-item active">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-cog"></i>
                             <div data-i18n="Account Settings">Operation</div>
@@ -112,6 +118,21 @@ if (!isset($_SESSION['loggedin'])) {
                                 </a>
                             </li>
                             <li class="menu-item">
+                                <a href="Qualification.php" class="menu-link">
+                                    <div data-i18n="Notifications">Saisie des QC</div>
+                                </a>
+                            </li>
+                            <li class="menu-item ">
+                                <a href="mise_certif.php" class="menu-link">
+                                    <div data-i18n="Notifications">Certificats de QC</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="demande_encou.php " class="menu-link">
+                                    <div data-i18n="Notifications">Certificats encours</div>
+                                </a>
+                            </li>
+                            <!-- <li class="menu-item">
                                 <a href="#" class="menu-link">
                                     <div data-i18n="Notifications">Formation</div>
                                 </a>
@@ -125,10 +146,11 @@ if (!isset($_SESSION['loggedin'])) {
                                 <a href="#" class="menu-link">
                                     <div data-i18n="Notifications">Journee Etude semminiare</div>
                                 </a>
-                            </li>
+                            </li> -->
                         </ul>
                     </li>
-                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Tableaux de Consultation</span></li>
+                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Tableaux de
+                            Consultation</span></li>
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bxs-file-find"></i>
@@ -140,10 +162,16 @@ if (!isset($_SESSION['loggedin'])) {
                                     <div data-i18n="Connections">Adhésion et Qualification</div>
                                 </a>
                             </li>
+                            <li class="menu-item ">
+                                <a href="consultation/recouvrement.php" class="menu-link">
+                                    <div data-i18n="Connections">Recouvrement</div>
+                                </a>
+                            </li>
                         </ul>
                     </li>
 
-                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Tableaux de setting</span></li>
+                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Tableaux de
+                            setting</span></li>
                     <!-- Tables -->
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -185,7 +213,8 @@ if (!isset($_SESSION['loggedin'])) {
             <!-- Layout container -->
             <div class="layout-page">
                 <!-- Navbar -->
-                <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
+                <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+                    id="layout-navbar">
                     <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
                         <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
                             <i class="bx bx-menu bx-sm"></i>
@@ -209,9 +238,11 @@ if (!isset($_SESSION['loggedin'])) {
                             <!-- Place this tag where you want the button to render. -->
                             <!-- User -->
                             <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
+                                    data-bs-toggle="dropdown">
                                     <div class="avatar avatar-online">
-                                        <img src="assets/img/avatars/55.png" alt class="w-px-40 h-auto rounded-circle" />
+                                        <img src="assets/img/avatars/55.png" alt
+                                            class="w-px-40 h-auto rounded-circle" />
                                     </div>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end">
@@ -220,7 +251,8 @@ if (!isset($_SESSION['loggedin'])) {
                                             <div class="d-flex">
                                                 <div class="flex-shrink-0 me-3">
                                                     <div class="avatar avatar-online">
-                                                        <img src="assets/img/avatars/55.png" alt class="w-px-40 h-auto rounded-circle" />
+                                                        <img src="assets/img/avatars/55.png" alt
+                                                            class="w-px-40 h-auto rounded-circle" />
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1">
@@ -249,7 +281,7 @@ if (!isset($_SESSION['loggedin'])) {
                                         <div class="dropdown-divider"></div>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#">
+                                        <a class="dropdown-item" href="profile.php">
                                             <i class="bx bx-user me-2"></i>
                                             <span class="align-middle">Mon profil</span>
                                         </a>
@@ -259,7 +291,7 @@ if (!isset($_SESSION['loggedin'])) {
                                         echo "<li>
                                                 <a class=\"dropdown-item\" href=\"setting.php\">
                                                 <i class=\"bx bx-cog me-2\"></i>
-                                                <span class=\"align-middle\"> Settings</span>
+                                                <span class=\"align-middle\"> Paramètres</span>
                                                 </a>
                                             </li>";
                                     }
@@ -279,123 +311,7 @@ if (!isset($_SESSION['loggedin'])) {
                         </ul>
                     </div>
                 </nav>
-                <script>
-                    $(document).ready(function() {
-                        $('#ville').change(function() {
-                            var regionID = $('#region').val();
-                            var villeID = $('#ville').val();
-                            if (villeID) {
-                                $.get(
-                                    "cotis.php", {
-                                        cotisa: "ad",
-                                        region_id: regionID,
-                                        ville_id: villeID
-                                    },
-                                    function(data) {
-                                        $('#Entreprise').html(data);
-                                    }
-                                );
-                            } else {
-                                $("#Entreprise").empty();
-                            }
-                        });
 
-                        $('#region').change(function() {
-                            var regionID = $(this).val();
-                            if (regionID) {
-                                $.get(
-                                    "ajax.php", {
-                                        region_id: regionID
-                                    },
-                                    function(data) {
-                                        $('#ville').html(data);
-                                    }
-                                );
-                            } else {
-                                $("#ville").empty();
-                            }
-                        });
-                        $('#Entreprise').change(function() {
-                            var entre = $(this).val();
-                            if (entre) {
-                                $.get(
-                                    "cotis.php", {
-                                        date: "date",
-                                        registre: entre
-                                    },
-                                    function(data) {
-                                        $('#ANNEE').html(data);
-                                        //console.log(data);
-                                    }
-                                );
-                            } else {
-                                $("#Entreprise").empty();
-                            }
-                        });
-                        $('#type_pai').change(function() {
-                            var vir = $('#type_pai').val();
-                            console.log(vir)
-                            if (vir == 'versement') {
-                                $('#nbch').css("display", "none");
-                                $('#bq').css("display", "none");
-
-                            } else {
-                                $('#nbch').css("display", "block");
-                                $('#bq').css("display", "block");
-                            }
-                        });
-
-                        $(document).on("click", "a.editcotis", function() {
-                            var ucid = $(this).closest("tr");
-                            var uid = ucid.find("td:eq(0)").text();
-                            var regi = ucid.find("td:eq(1)").text();
-                            var date = ucid.find("td:eq(2)").text();
-                            var numero_che = ucid.find("td:eq(6)").text();
-                            var montant = ucid.find("td:eq(7)").text();
-                            var lieu = ucid.find("td:eq(8)").text();
-                            $('#dateup').attr('value', date);
-                            $('#lieuup').attr('value', lieu);
-                            $('#ref').attr('value', uid);
-                            $('#nb_cheque').attr('value', numero_che);
-                            $('#montant').attr('value', montant.replace("DH", ""));
-                            console.log(montant);
-
-                        });
-
-                        $('#ANNEE').change(function() {
-                            var selected = $(this).val();
-                            var datecou = [];
-                            var id_selects = $('#Entreprise option:selected').val();
-                            var reff = $('#reff').val();
-                            $('#ANNEE option').each(function() {
-                                datecou.push($(this).attr('value'));
-                            });
-                            var max = datecou[datecou.length - 1];
-                            var min = datecou[0]
-                            if (selected > min && selected <= max) {
-                                var str = "Voyez-vous une amnistie des frais entre " + min + " et " + selected;
-                                if (confirm(str)) {
-                                    $.get(
-                                        "amiste.php", {
-                                            amnist: "",
-                                            date_min: min,
-                                            date_max: selected,
-                                            id_entre: id_selects,
-                                            ref: reff,
-                                        },
-                                        function(data) {
-                                            console.log(data);
-                                        }
-                                    );
-                                } else {
-                                    $('#ANNEE').prop("selectedIndex", 0);
-                                }
-                                location.reload();
-                                console.log($(this).val());
-                            }
-                        });
-                    });
-                </script>
                 <!-- / Navbar -->
                 <!-- Content wrapper -->
                 <div class="content-wrapper">
@@ -403,32 +319,53 @@ if (!isset($_SESSION['loggedin'])) {
                     <div class="container-xxl flex-grow-1 container-p-y">
                         <div class="card">
                             <div class="row">
-                                <div class="col-md-6">
-                                    <h5 class="card-header"> <strong>Cotisation</strong></h5>
+                                <div class="col-md-4">
+                                    <div class="input-group input-group-merge">
+                                        <h5 class="input-group card-header input-group-merge">
+                                            <strong>Cotisation</strong>
+                                        </h5>
+                                    </div>
                                 </div>
-                                <div class="col-md-4 " style="margin-left: auto;text-align-last: right; align-self: center; padding-right: calc(var(--bs-gutter-x) * 0.9);">
-                                    <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-primary bx bx-message-square-add" data-bs-toggle="modal" data-bs-target="#modaladd">
-                                    </button>
+                                <div class="col-md-4">
+                                    <div class=" card-header ">
+                                        <div class="input-group input-group-merge">
+                                            <span class="input-group-text input-group-merge"
+                                                id="basic-addon-search31"><i class="bx bx-search"></i></span>
+                                            <input type="text" id="search" class="form-control" placeholder="Search..."
+                                                aria-label="Search..." aria-describedby="basic-addon-search31">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                    <div class="input-group card-header" style="justify-content: right;">
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-primary bx bx-message-square-add"
+                                            data-bs-toggle="modal" data-bs-target="#modaladd">
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
 
                             <?php include 'updatecotis.php'; ?>
 
-                            <div class="modal fade " id="modaladd" tabindex="-1" style="display: none;" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered" style="max-width: 30rem !important; display: block;" role="document">
-                                    <form action="cotisation.php" method="get">
+                            <div class="modal fade " id="modaladd" tabindex="-1" style="display: none;"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered"
+                                    style="max-width: 30rem !important; display: block;" role="document">
+                                    <form action="./cotisation.php" method="post">
                                         <div class="modal-content container-xxl">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="modalCenterTitle">Add Cotisation</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
                                             </div>
                                             <div class="card-body">
 
                                                 <div class="col mb-0">
                                                     <label class="form-label" for="basic-icon-default-map">Ville</label>
                                                     <div class="input-group input-group-phone">
-                                                        <span id="basic-icon-map" class="input-group-text"><i class="bx bx-map"></i></span>
+                                                        <span id="basic-icon-map" class="input-group-text"><i
+                                                                class="bx bx-map"></i></span>
                                                         <select id="ville" name="ville" class="form-select">
                                                             <option value="0">Sélection par défaut</option>
                                                             <?php
@@ -444,11 +381,33 @@ if (!isset($_SESSION['loggedin'])) {
                                                     </div>
                                                 </div>
                                                 <div class="col mb-0">
+                                                    <label class="form-label" for="basic-icon-default-phone">Taux de
+                                                        cotisation</label>
+                                                    <div class="input-group input-group-phone">
+                                                        <span id="basic-icon-dollar" class="input-group-text"><i
+                                                                class="bx bx-dollar"></i></span>
+                                                        <select id="taux" required name="taux" class="form-select">
+                                                            <option value="">Sélection par défaut</option>
+                                                            <?php
+                                                            $querytaux = "SELECT MONTANT_COTISATION FROM societe GROUP BY MONTANT_COTISATION;";
+                                                            $restaux = mysqli_query($conn, $querytaux);
+                                                            if (mysqli_num_rows($restaux) > 0) {
+                                                                while ($row = mysqli_fetch_assoc($restaux)) {
+                                                                    echo "<option value=" . $row["MONTANT_COTISATION"] . ">" . $row["MONTANT_COTISATION"] . "</option>";
+                                                                }
+                                                            }
+                                                            ?>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col mb-0">
                                                     <label class="form-label" for="basic-icon-default-phone">Nom
                                                         d'Entreprise</label>
                                                     <div class="input-group input-group-phone">
-                                                        <span id="basic-icon-rename" class="input-group-text"><i class="bx bx-rename"></i></span>
-                                                        <select id="Entreprise" required name="Entreprise" class="form-select">
+                                                        <span id="basic-icon-rename" class="input-group-text"><i
+                                                                class="bx bx-rename"></i></span>
+                                                        <select id="Entreprise" required name="Entreprise"
+                                                            class="form-select">
                                                             <option value="0">Sélection par défaut</option>
                                                             <!-- <option id="registers" ></option> -->
                                                         </select>
@@ -459,34 +418,58 @@ if (!isset($_SESSION['loggedin'])) {
                                                         <label class="form-label" for="basic-icon-default-phone">Année
                                                             de Cotisation</label>
                                                         <div class="input-group input-group-phone">
-                                                            <span id="basic-icon-calendar" class="input-group-text"><i class="bx bx-calendar"></i></span>
-                                                            <select id="ANNEE" required name="ANNEE" class="form-select">
-                                                                <option value="0">Sélection par défaut</option>
-                                                            </select>
+                                                            <span id="basic-icon-calendar" class="input-group-text"><i
+                                                                    class="bx bx-calendar"></i></span>
+
+                                                            <input type="text" name="annee_pai" id="basic-icon-code"
+                                                                value="<?php echo date("Y"); ?>" class="form-control"
+                                                                placeholder="XXXXX" aria-label="date"
+                                                                aria-describedby="basic-icon-default-date">
                                                         </div>
                                                     </div>
                                                     <div class="col mb-0">
-                                                        <label class="form-label" for="basic-icon-default-note">Ref</label>
+                                                        <label class="form-label"
+                                                            for="basic-icon-default-note">Ref</label>
                                                         <div class="input-group input-group-merge">
-                                                            <span id="basic-icon-default-objects-horizontal-left" class="input-group-text"><i class="bx bx-code"></i></span>
-                                                            <input type="number" id="reff" disabled name="ref" value="<?php $ref = (rand(1, 10000000));
-                                                                                                                        echo $ref; ?>" id="basic-icon-code" class="form-control" placeholder="XXXXX" aria-label="ref" aria-describedby="basic-icon-default-ref">
+                                                            <span id="basic-icon-default-objects-horizontal-left"
+                                                                class="input-group-text"><i
+                                                                    class="bx bx-code"></i></span>
+                                                            <input type="text" id="reff" name="ref" value="<?php $ref = date("Y");
+
+                                                            $societe = "SELECT count(*) FROM `cotis`";
+                                                            $querys = mysqli_query($conn, $societe);
+                                                            $count = mysqli_fetch_row($querys);
+                                                            $ref = $count[0] + 1 . "/" . $ref;
+                                                            echo $ref;
+                                                            ?>" id="basic-icon-code" class="form-control"
+                                                                placeholder="XXXXX" aria-label="ref"
+                                                                aria-describedby="basic-icon-default-ref">
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row g-2">
                                                     <div class="col mb-0">
-                                                        <label class="form-label" for="basic-icon-default-phone">Date</label>
+                                                        <label class="form-label"
+                                                            for="basic-icon-default-phone">Date</label>
                                                         <div class="input-group input-group-phone">
-                                                            <span id="basic-icon-calendar" class="input-group-text"><i class="bx bx-calendar"></i></span>
-                                                            <input type="date" name="date" id="basic-icon-code" class="form-control" placeholder="XXXXX" aria-label="date" aria-describedby="basic-icon-default-date">
+                                                            <span id="basic-icon-calendar" class="input-group-text"><i
+                                                                    class="bx bx-calendar"></i></span>
+                                                            <input type="date" name="date" id="basic-icon-code"
+                                                                class="form-control" placeholder="XXXXX"
+                                                                aria-label="date"
+                                                                aria-describedby="basic-icon-default-date">
                                                         </div>
                                                     </div>
                                                     <div class="col mb-0">
-                                                        <label class="form-label" for="basic-icon-default-note">Lieu</label>
+                                                        <label class="form-label"
+                                                            for="basic-icon-default-note">Lieu</label>
                                                         <div class="input-group input-group-merge">
-                                                            <span id="basic-icon-map" class="input-group-text"><i class="bx bx-map"></i></span>
-                                                            <input type="text" name="Lieu" id="basic-icon-map" class="form-control" placeholder="XXXXX" aria-label="map" aria-describedby="basic-icon-default-lieu">
+                                                            <span id="basic-icon-map" class="input-group-text"><i
+                                                                    class="bx bx-map"></i></span>
+                                                            <input type="text" name="Lieu" id="basic-icon-map"
+                                                                class="form-control" placeholder="XXXXX"
+                                                                aria-label="map"
+                                                                aria-describedby="basic-icon-default-lieu">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -495,8 +478,12 @@ if (!isset($_SESSION['loggedin'])) {
                                                         <label class="form-label" for="basic-icon-default-phone">type de
                                                             paiement</label>
                                                         <div class="input-group input-group-phone">
-                                                            <span id="basic-icon-money-withdraw" class="input-group-text"><i class="bx bx-money-withdraw"></i></span>
-                                                            <select id="type_pai" required name="type_pai" class="form-select">
+                                                            <span id="basic-icon-money-withdraw"
+                                                                class="input-group-text"><i
+                                                                    class="bx bx-money-withdraw"></i></span>
+                                                            <select id="type_pai" required name="type_pai"
+                                                                class="form-select">
+                                                                <option value="0">Sélection par défaut</option>
                                                                 <option value="cheque">Cheque</option>
                                                                 <option value="lcn">LCN</option>
                                                                 <option value="virement">Virement</option>
@@ -504,9 +491,11 @@ if (!isset($_SESSION['loggedin'])) {
                                                         </div>
                                                     </div>
                                                     <div class="col mb-0" id="bq">
-                                                        <label class="form-label" for="basic-icon-default-bank">Banque</label>
+                                                        <label class="form-label"
+                                                            for="basic-icon-default-bank">Banque</label>
                                                         <div class="input-group input-group-phone">
-                                                            <span id="basic-icon-calendar" class="input-group-text"><i class="bx bxs-bank"></i></span>
+                                                            <span id="basic-icon-calendar" class="input-group-text"><i
+                                                                    class="bx bxs-bank"></i></span>
                                                             <select id="banque" name="banque" class="form-select">
                                                                 <option value="0">Sélection par défaut</option>
                                                                 <?php
@@ -517,8 +506,9 @@ if (!isset($_SESSION['loggedin'])) {
                                                                         echo "<option value=" . $i["code"] . ">" . $i["Nom"] . "</option>";
                                                                     }
                                                                 } else {
-                                                                    echo "Error: " . $conn->error;
-                                                                };
+                                                                    echo "Error: " . $conn->$error;
+                                                                }
+                                                                ;
                                                                 ?>
                                                             </select>
                                                         </div>
@@ -526,25 +516,35 @@ if (!isset($_SESSION['loggedin'])) {
                                                 </div>
                                                 <div class="row g-2">
                                                     <div class="col mb-0" id="nbch">
-                                                        <label class="form-label" for="basic-icon-default-note">N
-                                                            Cheque</label>
+                                                        <label class="form-label" id="labelcheq"
+                                                            for="basic-icon-default-note">N Cheque</label>
                                                         <div class="input-group input-group-merge">
-                                                            <span id="basic-icon-dollar" class="input-group-text"><i class="bx bx-code"></i></span>
-                                                            <input type="text" name="nb_cheque" id="basic-icon-map" class="form-control" placeholder="XXXXX" aria-label="code" aria-describedby="basic-icon-default-code">
+                                                            <span id="basic-icon-dollar" class="input-group-text"><i
+                                                                    class="bx bx-code"></i></span>
+                                                            <input type="text" name="nb_cheque" id="nb_cheq"
+                                                                class="form-control" placeholder="XXXXX"
+                                                                aria-label="code"
+                                                                aria-describedby="basic-icon-default-code">
                                                         </div>
                                                     </div>
                                                     <div class="col mb-0">
-                                                        <label class="form-label" for="basic-icon-default-note">Montant</label>
+                                                        <label class="form-label"
+                                                            for="basic-icon-default-note">Montant</label>
                                                         <div class="input-group input-group-merge">
-                                                            <span id="basic-icon-dollar" class="input-group-text"><i class="bx bx-dollar"></i></span>
-                                                            <input type="number" min="0" name="montant" required id="basic-icon-map" class="form-control" placeholder="XXXXX" aria-label="dollar" aria-describedby="basic-icon-default-montant">
+                                                            <span id="basic-icon-dollar" class="input-group-text"><i
+                                                                    class="bx bx-dollar"></i></span>
+                                                            <input type="number" min="0" name="montant" required
+                                                                id="basic-icon-map" class="form-control"
+                                                                placeholder="XXXXX" aria-label="dollar"
+                                                                aria-describedby="basic-icon-default-montant">
                                                         </div>
                                                     </div>
                                                 </div>
 
                                                 <div class="col mb-0" style="margin-top: 9px;">
                                                     <div class="input-group input-group-merge">
-                                                        <button type="submit" name="addcotis" class="btn btn-primary">ajouter</button>
+                                                        <button type="submit" name="addcotis"
+                                                            class="btn btn-primary">ajouter</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -558,47 +558,55 @@ if (!isset($_SESSION['loggedin'])) {
                                 $date = $_GET["date"];
                                 $Lieu = $_GET["Lieu"];
                                 $type_pai = $_GET["type_pai"];
-                                $banque = $_GET["banque"];
+                                $banque = $_GET["banque_up"];
                                 $nb_cheque = $_GET["nb_cheque"];
                                 $montant = $_GET["montant"];
-                                $queryup = "UPDATE `cotis` SET `dat`='$date',`type_paiement`='$type_pai',`cheque`='$nb_cheque',`banque`='$banque',`montant`=$montant,`lieu`='$Lieu' WHERE `num`=$ref";
+                                $queryup = "UPDATE `cotis` SET `date_paim`='$date',`type_paiement`='$type_pai',`Num_cheque`='$nb_cheque',`banque`='$banque',`montant`=$montant,`lieu`='$Lieu' WHERE `id`=$ref";
                                 $conn->query($queryup);
                             }
                             if (isset($_GET["cotisation_del"])) {
                                 $id = $_GET["cotisation_del"];
-                                $query = "DELETE FROM `cotis` WHERE `num`='$id'";
+                                $query = "DELETE FROM `cotis` WHERE `id`='$id'";
                                 $conn->query($query);
                                 if ($conn->query($query) === TRUE) {
                                 } else {
-                                    echo "Error: " . $query . "<br>" . $conn->error;
-                                };
+                                    echo "Error: " . $query . "<br>" . $conn->$error;
+                                }
+                                ;
+                            }
+                            if (isset($_POST["addcotis"])) {
+                                $id_entre = $_POST["Entreprise"];
+                                $ANNEE = $_POST["annee_pai"];
+                                $date = $_POST["date"];
+                                $ref = date("Y");
+                                $nbsoci_cotis = "SELECT count(*) FROM `cotis`";
+                                $querys = mysqli_query($conn, $nbsoci_cotis);
+                                $count_cotis = mysqli_fetch_row($querys);
+                                $ref = $count_cotis[0] + 1 . "/" . $ref;
+                                $aueryentre = "SELECT ENTREPRISE FROM `societe` where Id=$id_entre";
+                                $query_ent = mysqli_query($conn, $aueryentre);
+                                $Entreprise = mysqli_fetch_row($query_ent);
+                                $Entreprise[0] = str_replace("'", "\'", $Entreprise[0]);
+                                $Lieu = $_POST["Lieu"];
+                                $type_pai = $_POST["type_pai"];
+                                $banque = $_POST["banque"];
+                                if (isset($_POST["nb_cheque"])) {
+                                    $nb_cheque = $_POST["nb_cheque"];
+                                } else
+                                    $nb_cheque = 0;
+                                $montant = $_POST["montant"];
+                                $insertcotis = "INSERT INTO `cotis`(`ENTREPRISE`, `banque`, `date_paim`, `type_paiement`, `num_recu_cotis`, `Num_cheque`, `montant`, `lieu`, `ANNEE`, `id_entre`) 
+                                                                VALUES ('$Entreprise[0]','$banque','$date','$type_pai',$ref,'$nb_cheque',$montant,'$Lieu',$ANNEE,$id_entre)";
+
+                                $conn->query($insertcotis);
                             }
                             ?>
                             <div class="table-responsive text-nowrap">
-                                <?php
-                                if (isset($_GET["addcotis"])) {
-                                    $Entreprise = $_GET["Entreprise"];
-                                    $ANNEE = $_GET["ANNEE"];
-                                    $date = $_GET["date"];
-                                    $reff = $ref;
-                                    $Lieu = $_GET["Lieu"];
-                                    $type_pai = $_GET["type_pai"];
-                                    $banque = $_GET["banque"];
-                                    $nb_cheque = $_GET["nb_cheque"];
-                                    $montant = $_GET["montant"];
-                                    $insertcotis = "INSERT INTO `cotis`(`registre`, `dat`, `type_paiement`, `cheque`, `banque`, `montant`, `lieu`, `ANNEE`, `num`) VALUES ($Entreprise,'$date','$type_pai','$nb_cheque','$banque',$montant,'$Lieu',$ANNEE,$reff)";
-
-                                    if ($conn->query($insertcotis) === TRUE) {
-                                    } else {
-                                        echo "Error: " . $insertcotis . "<br>" . $conn->error;
-                                    };
-                                }
-                                ?>
                                 <table class="table table-hover" id="table_cotis">
                                     <thead>
                                         <tr>
                                             <th>Numero</th>
-                                            <th>Registre</th>
+                                            <th>Raison social</th>
                                             <th>Date</th>
                                             <th>annee</th>
                                             <th>Banque</th>
@@ -609,18 +617,18 @@ if (!isset($_SESSION['loggedin'])) {
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="table-border-bottom-0">
+                                    <tbody class="table-border-bottom-0" id="tabcotisser">
                                         <?php
                                         $sql = "SELECT * FROM `cotis`";
                                         $query = mysqli_query($conn, $sql);
                                         if (mysqli_num_rows($query) > 0) {
                                             while ($row = mysqli_fetch_assoc($query)) {
-                                                $ide = $row["num"];
+                                                $ide = $row["id"];
                                                 echo "
                                                     <tr>
-                                                        <td><strong>" . $row["num"] . "</strong></td>
-                                                        <td>" . $row["registre"] . "</td>
-                                                        <td>" . $row["dat"] . "</td>
+                                                        <td><strong>" . $row["id"] . "</strong></td>
+                                                        <td>" . $row["ENTREPRISE"] . "</td>
+                                                        <td>" . $row["date_paim"] . "</td>
                                                         <td>" . $row["ANNEE"] . "</td>
                                                         <td>";
                                                 if ($row["banque"] == '0') {
@@ -630,7 +638,7 @@ if (!isset($_SESSION['loggedin'])) {
                                                 }
                                                 echo "</td>
                                                         <td>" . $row["type_paiement"] . "</td>
-                                                        <td>" . $row["cheque"] . "</td>
+                                                        <td>" . $row["Num_cheque"] . "</td>
                                                         <td>" . $row["montant"] . "<strong>DH</strong></td>
                                                         <td>" . $row["lieu"] . "</td>";
                                                 if ($_COOKIE['type_user'] == 1) {
@@ -641,7 +649,7 @@ if (!isset($_SESSION['loggedin'])) {
                                                                     </button>
                                                                     <div class=\"dropdown-menu\">
                                                                         <a class=\"dropdown-item editcotis\"  data-bs-toggle=\"modal\" data-bs-target=\"#cotisationup\" href=\"#\"><i class=\"bx bx-edit-alt me-1\" data-id=" . $ide . "></i> Edit</a>
-                                                                        <a class=\"dropdown-item\" href=cotisation.php?cotisation_del=" . $row["num"] . "><i class=\"bx bx-trash me-1\"></i> Delete</a>
+                                                                        <a class=\"dropdown-item\" href=cotisation.php?cotisation_del=" . $row["id"] . "><i class=\"bx bx-trash me-1\"></i> Delete</a>
                                                                     </div>
                                                                 </div>
                                                             </td>
@@ -665,6 +673,33 @@ if (!isset($_SESSION['loggedin'])) {
                                     </tbody>
                                 </table>
                             </div>
+                            <?php
+                            $record_per_page = 25;
+                            echo "<br /><div align=\"center\"> <nav aria-label=\"Page navigation\">
+              <ul class=\"pagination pagination-sm justify-content-center\">
+                <li class=\"page-item\">
+                  <a class=\"page-link prev\" href=\"javascript:void(0);\"><i class=\"tf-icon bx bx-chevrons-left\"></i></a>
+                </li>";
+                            $page_query = "SELECT * FROM cotis ORDER BY Id ASC";
+                            $page_result = mysqli_query($conn, $page_query);
+                            $total_records = mysqli_num_rows($page_result);
+                            $total_pages = ceil($total_records / $record_per_page);
+                            for ($i = 1; $i <= $total_pages; $i++) {
+                                echo "
+                <li class=\"page-item \">
+                  <a class=\"page-link pagination_link\" id='" . $i . "'>" . $i . "</a>
+                </li>
+                ";
+                            }
+                            echo "<li class=\"page-item \">
+                  <a class=\"page-link next\" id=" . $total_pages . " href=\"javascript:void(0);\">
+                    <i class=\"tf-icon bx bx-chevrons-right\" ></i>
+                  </a>
+                </li>
+              </ul>
+            </nav><br /><br />";
+
+                            ?>
                         </div>
                     </div>
                     <!-- Content wrapper -->
@@ -678,6 +713,98 @@ if (!isset($_SESSION['loggedin'])) {
         </div>
         <!-- / Layout wrapper -->
         <!-- Core JS -->
+        <script>
+            $(document).ready(function () {
+                load_data();
+                $('#ville').change(function () {
+                    $('#taux').val("");
+                });
+                $('#taux').change(function () {
+                    var ville = $('#ville').val();
+                    var taux = $('#taux').val();
+                    $.get(
+                        "cotis.php", {
+                        ville: ville,
+                        taux: taux
+                    },
+                        function (data) {
+                            $('#Entreprise').html(data);
+                        }
+                    );
+                });
+
+                $("[name='type_pai']").change(function () {
+                    var selected = $(this).val();
+                    var nb_chaq = $('#nb_cheq').val();
+                    if (selected == "virement") {
+                        $('#nb_cheq').prop("disabled", true);
+                        $('#nb_cheq').prop("required", false);
+                    } else {
+                        $('#nb_cheq').prop("disabled", false);
+                        $('#nb_cheq').prop("required", true);
+                        if (selected == "lcn") {
+                            $('#labelcheq').text("Numero");
+                        } else {
+                            $('#labelcheq').text("N CHEQUE");
+                        }
+                    }
+                });
+
+                $(document).on("click", "a.editcotis", function () {
+                    var ucid = $(this).closest("tr");
+                    var uid = ucid.find("td:eq(0)").text();
+                    var regi = ucid.find("td:eq(1)").text();
+                    var date = ucid.find("td:eq(2)").text();
+                    var baq = ucid.find("td:eq(4)").text();
+                    var numero_che = ucid.find("td:eq(6)").text();
+                    var montant = ucid.find("td:eq(7)").text();
+                    var lieu = ucid.find("td:eq(8)").text();
+                    $('#dateup').attr('value', date);
+                    $('#lieuup').attr('value', lieu);
+                    $('#banque_up').val(baq)
+                    $('#ref').attr('value', uid);
+                    $('#nb_cheque').attr('value', numero_che);
+                    $('#montant').attr('value', montant.replace("DH", ""));
+                });
+                $("#search").keyup(function () {
+                    var search = $("#search").val()
+                    $.ajax({
+                        url: 'aax.php',
+                        method: 'post',
+                        data: {
+                            enrech: search,
+                        },
+                        success: function (response) {
+                            $('#tabcotisser').html(response);
+                        }
+                    });
+                });
+                function load_data(page) {
+                    $.ajax({
+                        url: "paginationcotisation.php",
+                        method: "POST",
+                        data: {
+                            page: page
+                        },
+                        success: function (data) {
+                            $('#tabcotisser').html(data);
+                        }
+                    });
+                }
+                $(document).on('click', '.pagination_link', function () {
+                    var page = $(this).attr("id");
+                    load_data(page);
+                });
+                $(document).on('click', '.next', function () {
+                    var page = $(this).attr("id");
+                    load_data(page);
+                });
+                $(document).on('click', '.prev', function () {
+                    var page = 1;
+                    load_data(page);
+                });
+            });
+        </script>
         <!-- build:js assets/vendor/js/core.js -->
         <script src="assets/vendor/libs/jquery/jquery.js"></script>
         <script src="assets/vendor/libs/popper/popper.js"></script>

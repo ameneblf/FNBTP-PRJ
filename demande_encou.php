@@ -2,11 +2,11 @@
 session_start();
 include_once('db/connexion.php');
 /* if($_SESSION['loggedin'] = TRUE){
-echo $_SESSION['name'];
-echo $_SESSION['id'] ;
-}else{
-echo "echec";
-}*/
+ echo $_SESSION['name'];
+ echo $_SESSION['id'] ;
+ }else{
+ echo "echec";
+ }*/
 if (!isset($_SESSION['loggedin'])) {
     header('refresh:0;url=404.php'); //2 s
     exit();
@@ -22,7 +22,7 @@ if (!isset($_SESSION['loggedin'])) {
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Paramètres</title>
+    <title>Demandées D.C encours</title>
 
     <meta name="description" content="" />
 
@@ -48,14 +48,15 @@ if (!isset($_SESSION['loggedin'])) {
 
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
     <link rel="stylesheet" href="assets/vendor/libs/apex-charts/apex-charts.css" />
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
     <script src="assets/vendor/js/helpers.js"></script>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.2/jquery.min.js"></script>
+
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="assets/js/config.js"></script>
@@ -66,7 +67,6 @@ if (!isset($_SESSION['loggedin'])) {
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
             <!-- Menu -->
-
             <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
                 <div class="app-brand demo">
                     <a href="dashboard.php" class="app-brand-link">
@@ -83,7 +83,7 @@ if (!isset($_SESSION['loggedin'])) {
 
                 <ul class="menu-inner py-1">
                     <!-- Dashboard -->
-                    <li class="menu-item">
+                    <li class="menu-item ">
                         <a href="dashboard.php" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
                             <div data-i18n="Analytics">Tableau de bord</div>
@@ -97,16 +97,15 @@ if (!isset($_SESSION['loggedin'])) {
                         </a>
                     </li>
 
-                    <li class="menu-header small text-uppercase">
+                    <li class="menu-header small text-uppercase ">
                         <span class="menu-header-text">OPERATIONS</span>
                     </li>
-                    <li class="menu-item">
+                    <li class="menu-item active">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-cog"></i>
                             <div data-i18n="Account Settings">Operation</div>
                         </a>
                         <ul class="menu-sub">
-
                             <li class="menu-item">
                                 <a href="adhesion.php" class="menu-link">
                                     <div data-i18n="Account">Adhésion</div>
@@ -127,7 +126,7 @@ if (!isset($_SESSION['loggedin'])) {
                                     <div data-i18n="Notifications">Certificats de QC</div>
                                 </a>
                             </li>
-                            <li class="menu-item">
+                            <li class="menu-item active">
                                 <a href="demande_encou.php " class="menu-link">
                                     <div data-i18n="Notifications">Certificats encours</div>
                                 </a>
@@ -170,7 +169,6 @@ if (!isset($_SESSION['loggedin'])) {
                             </li>
                         </ul>
                     </li>
-
                     <li class="menu-header small text-uppercase"><span class="menu-header-text">Tableaux de
                             setting</span></li>
                     <!-- Tables -->
@@ -294,11 +292,11 @@ if (!isset($_SESSION['loggedin'])) {
                                     <?php
                                     if ($_COOKIE['type_user'] == 1) {
                                         echo "<li>
-                                <a class=\"dropdown-item\" href=\"setting.php\">
-                                <i class=\"bx bx-cog me-2\"></i>
-                                <span class=\"align-middle\"> Paramètres</span>
-                                </a>
-                            </li>";
+                        <a class=\"dropdown-item\" href=\"setting.php\">
+                            <i class=\"bx bx-cog me-2\"></i>
+                            <span class=\"align-middle\"> Paramètres</span>
+                        </a>
+                    </li>";
                                     }
                                     ?>
                                     <li>
@@ -322,199 +320,294 @@ if (!isset($_SESSION['loggedin'])) {
                 <div class="content-wrapper">
                     <!-- Content -->
                     <div class="container-xxl flex-grow-1 container-p-y">
-                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Account Settings /</span>
-                            Account</h4>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="card mb-4">
-                                    <h5 class="card-header">Profile Details</h5>
-                                    <!-- Account -->
-                                    <div class="card-body">
-                                        <form id="formAccountSettings" method="POST" onsubmit="return false">
-                                            <div class="row">
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="firstName" class="form-label">First Name</label>
-                                                    <input class="form-control" type="text" id="firstName"
-                                                        name="firstName" value="John" autofocus="">
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="lastName" class="form-label">Last Name</label>
-                                                    <input class="form-control" type="text" name="lastName"
-                                                        id="lastName" value="Doe">
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="email" class="form-label">E-mail</label>
-                                                    <input class="form-control" type="text" id="email" name="email"
-                                                        value="john.doe@example.com" placeholder="john.doe@example.com">
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="organization" class="form-label">Organization</label>
-                                                    <input type="text" class="form-control" id="organization"
-                                                        name="organization" value="ThemeSelection">
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label class="form-label" for="phoneNumber">Phone Number</label>
-                                                    <div class="input-group input-group-merge">
-                                                        <span class="input-group-text">US (+1)</span>
-                                                        <input type="text" id="phoneNumber" name="phoneNumber"
-                                                            class="form-control" placeholder="202 555 0111">
-                                                    </div>
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="address" class="form-label">Address</label>
-                                                    <input type="text" class="form-control" id="address" name="address"
-                                                        placeholder="Address">
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="state" class="form-label">State</label>
-                                                    <input class="form-control" type="text" id="state" name="state"
-                                                        placeholder="California">
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="zipCode" class="form-label">Zip Code</label>
-                                                    <input type="text" class="form-control" id="zipCode" name="zipCode"
-                                                        placeholder="231465" maxlength="6">
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label class="form-label" for="country">Country</label>
-                                                    <select id="country" class="select2 form-select">
-                                                        <option value="">Select</option>
-                                                        <option value="Australia">Australia</option>
-                                                        <option value="Bangladesh">Bangladesh</option>
-                                                        <option value="Belarus">Belarus</option>
-                                                        <option value="Brazil">Brazil</option>
-                                                        <option value="Canada">Canada</option>
-                                                        <option value="China">China</option>
-                                                        <option value="France">France</option>
-                                                        <option value="Germany">Germany</option>
-                                                        <option value="India">India</option>
-                                                        <option value="Indonesia">Indonesia</option>
-                                                        <option value="Israel">Israel</option>
-                                                        <option value="Italy">Italy</option>
-                                                        <option value="Japan">Japan</option>
-                                                        <option value="Korea">Korea, Republic of</option>
-                                                        <option value="Mexico">Mexico</option>
-                                                        <option value="Philippines">Philippines</option>
-                                                        <option value="Russia">Russian Federation</option>
-                                                        <option value="South Africa">South Africa</option>
-                                                        <option value="Thailand">Thailand</option>
-                                                        <option value="Turkey">Turkey</option>
-                                                        <option value="Ukraine">Ukraine</option>
-                                                        <option value="United Arab Emirates">United Arab Emirates
-                                                        </option>
-                                                        <option value="United Kingdom">United Kingdom</option>
-                                                        <option value="United States">United States</option>
-                                                    </select>
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="language" class="form-label">Language</label>
-                                                    <select id="language" class="select2 form-select">
-                                                        <option value="">Select Language</option>
-                                                        <option value="en">English</option>
-                                                        <option value="fr">French</option>
-                                                        <option value="de">German</option>
-                                                        <option value="pt">Portuguese</option>
-                                                    </select>
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="timeZones" class="form-label">Timezone</label>
-                                                    <select id="timeZones" class="select2 form-select">
-                                                        <option value="">Select Timezone</option>
-                                                        <option value="-12">(GMT-12:00) International Date Line West
-                                                        </option>
-                                                        <option value="-11">(GMT-11:00) Midway Island, Samoa</option>
-                                                        <option value="-10">(GMT-10:00) Hawaii</option>
-                                                        <option value="-9">(GMT-09:00) Alaska</option>
-                                                        <option value="-8">(GMT-08:00) Pacific Time (US &amp; Canada)
-                                                        </option>
-                                                        <option value="-8">(GMT-08:00) Tijuana, Baja California</option>
-                                                        <option value="-7">(GMT-07:00) Arizona</option>
-                                                        <option value="-7">(GMT-07:00) Chihuahua, La Paz, Mazatlan
-                                                        </option>
-                                                        <option value="-7">(GMT-07:00) Mountain Time (US &amp; Canada)
-                                                        </option>
-                                                        <option value="-6">(GMT-06:00) Central America</option>
-                                                        <option value="-6">(GMT-06:00) Central Time (US &amp; Canada)
-                                                        </option>
-                                                        <option value="-6">(GMT-06:00) Guadalajara, Mexico City,
-                                                            Monterrey</option>
-                                                        <option value="-6">(GMT-06:00) Saskatchewan</option>
-                                                        <option value="-5">(GMT-05:00) Bogota, Lima, Quito, Rio Branco
-                                                        </option>
-                                                        <option value="-5">(GMT-05:00) Eastern Time (US &amp; Canada)
-                                                        </option>
-                                                        <option value="-5">(GMT-05:00) Indiana (East)</option>
-                                                        <option value="-4">(GMT-04:00) Atlantic Time (Canada)</option>
-                                                        <option value="-4">(GMT-04:00) Caracas, La Paz</option>
-                                                    </select>
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="currency" class="form-label">Currency</label>
-                                                    <select id="currency" class="select2 form-select">
-                                                        <option value="">Select Currency</option>
-                                                        <option value="usd">USD</option>
-                                                        <option value="euro">Euro</option>
-                                                        <option value="pound">Pound</option>
-                                                        <option value="bitcoin">Bitcoin</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="mt-2">
-                                                <button type="submit" class="btn btn-primary me-2">Save changes</button>
-                                                <button type="reset" class="btn btn-outline-secondary">Cancel</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <!-- /Account -->
+                        <div class="card">
+                            <div class="row col-lg-12">
+                                <div class="col-md-4">
+                                    <h5 class="card-header"> <strong>Tableaux des sociétés</strong></h5>
                                 </div>
-                                <div class="card">
-                                    <h5 class="card-header">Delete Account</h5>
-                                    <div class="card-body">
-                                        <div class="mb-3 col-12 mb-0">
-                                            <div class="alert alert-warning">
-                                                <h6 class="alert-heading fw-bold mb-1">Êtes-vous sûr de vouloir supprimer votre compte ?</h6>
-                                                <p class="mb-0">Une fois que vous avez supprimé votre compte, il n'y a plus de retour en arrière. Soyez certain.</p>
-                                            </div>
+
+                                <div class="col-md-4 "
+                                    style="margin-left: auto;text-align-last: right; align-self: center; padding-right: calc(var(--bs-gutter-x) * 0.9);">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary bx bx-message-square-add"
+                                        data-bs-toggle="modal" data-bs-target="#modaladd">
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class=" card-body" style="padding-top: 0;">
+                                        <label class="form-label" for="basic-icon-default-map">Par Ville</label>
+                                        <div class="input-group input-group-phone">
+                                            <span id="basic-icon-map" class="input-group-text"><i
+                                                    class="bx bx-map"></i></span>
+                                            <select id="villerecherch" name="villerecherch" class="form-select">
+                                                <option value="0">Sélection par défaut</option>
+                                                <option value="KENITRA">KENITRA</option>
+                                                <option value="KHEMISSET">KHEMISSET</option>
+                                                <option value="RABAT">RABAT</option>
+                                                <option value="SALE">SALE</option>
+                                                <option value="TEMARA">TEMARA</option>
+                                                <option value="TIFELT">TIFELT</option>
+                                            </select>
                                         </div>
-                                        <form id="formAccountDeactivation" onsubmit="return false">
-                                            <button type="button" class="btn btn-danger deactivate-account">Supprimer le compte</button>
-                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class=" card-body" style="padding-top: 0;">
+                                        <label class="form-label" for="basic-icon-default-map">Adhésion</label>
+                                        <div class="input-group input-group-phone" id="adhesionselect">
+                                        <span id="basic-icon-map" class="input-group-text"><i
+                                                    class="bx bx-intersect"></i></span>
+                                            <select class="form-select" id="adhesrecher" aria-label="Default select example">
+                                                <option value="no">Sélection par défaut</option>
+                                                <option value="1">Adhérente</option>
+                                                <option value="0">Non Adhérente</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label" for="basic-icon-default-map-alt">ministère</label>
+                                    <div class="input-group input-group-phone">
+                                        <span id="basic-icon-briefcase-alt-2" class="input-group-text"><i
+                                                class="bx bx-briefcase-alt-2"></i></span>
+                                        <select required name="ministererecherch" id="ministererecherch"
+                                            class="form-select">
+                                            <option value="0">Sélection par défaut</option>
+                                            <?php
+                                            $qministere = "SELECT * FROM `ministere`";
+                                            $ministere = mysqli_query($conn, $qministere);
+                                            if (mysqli_num_rows($ministere) > 0) {
+                                                while ($row = mysqli_fetch_assoc($ministere)) {
+                                                    echo "<option value=" . $row["code"] . ">" . $row["nom"] . "</option>";
+                                                }
+                                            }
+                                            ?>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <br>
+                        <?php
+                        if (isset($_POST["addedoss"])) {
+                            //SELECT max(nb_regional) FROM `societe`;
+                            $id_en = $_POST["Entreprise"];
+                            $res = $conn->query("SELECT ENTREPRISE FROM `societe` WHERE `Id`=$id_en");
+                            $row = mysqli_fetch_row($res);
+                            $entreprise = str_replace("'", "\'", $row[0]);
+                            $minister = $_POST["ministere"];
+                            $query = "INSERT INTO `certiftmp_tab`(`ENTREPRISE`, `ID_ENTREPRISE`, `MINISTER`) VALUES ('$entreprise','$id_en','$minister')";
+                            $conn->query($query);
+                        }
+                        if (isset($_GET["id_doss"])) {
+                            $id = $_GET["id_doss"];
+                            $query = "DELETE FROM certiftmp_tab WHERE `ID`=$id";
+                            $conn->query($query);
+                        }
+                        ?>
+                        <div class="card">
+                            <div class="table-responsive text-nowrap">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>ENTREPRISE</th>
+                                            <th>MINISTER</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="table-border-bottom-0" id="tabledata">
+                                    </tbody>
+                                </table>
+                            </div>
+                            <?php
+                            $record_per_page = 25;
+                            echo "<br /><div align=\"center\"> <nav aria-label=\"Page navigation\">
+              <ul class=\"pagination pagination-sm justify-content-center\">
+                <li class=\"page-item\">
+                  <a class=\"page-link prev\" href=\"javascript:void(0);\"><i class=\"tf-icon bx bx-chevrons-left\"></i></a>
+                </li>";
+                            $page_query = "SELECT * FROM certiftmp_tab ORDER BY Id ASC";
+                            $page_result = mysqli_query($conn, $page_query);
+                            $total_records = mysqli_num_rows($page_result);
+                            $total_pages = ceil($total_records / $record_per_page);
+                            for ($i = 1; $i <= $total_pages; $i++) {
+                                echo "
+                <li class=\"page-item \">
+                  <a class=\"page-link pagination_link\" id='" . $i . "'>" . $i . "</a>
+                </li>
+                ";
+                            }
+                            echo "<li class=\"page-item \">
+                  <a class=\"page-link next\" id=" . $total_pages . " href=\"javascript:void(0);\">
+                    <i class=\"tf-icon bx bx-chevrons-right\" ></i>
+                  </a>
+                </li>
+              </ul>
+            </nav><br /><br />";
+
+                            ?>
+                        </div>
+                        <!-- Content wrapper -->
                     </div>
-                    <!-- / Content -->
-
-                    <!-- Footer -->
-                    <footer class="content-footer footer bg-footer-theme">
-                    </footer>
-                    <!-- / Footer -->
-
-                    <div class="content-backdrop fade"></div>
+                    <!-- / Layout page -->
                 </div>
-                <!-- Content wrapper -->
-            </div>
-            <!-- / Layout page -->
-        </div>
+                <div class="modal fade " id="modaladd" tabindex="-1" style="display: none;" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" style="max-width: 40rem !important; display: block;"
+                        role="document">
+                        <form action="demande_encou.php" method="post" id="formentre">
+                            <div class="modal-content container-xxl">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalCenterTitle">Ajouter un dossier</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="card-body">
+                                    <div class="col mb-0">
+                                        <label class="form-label" for="basic-icon-default-map">Ville</label>
+                                        <div class="input-group input-group-phone">
+                                            <span id="basic-icon-map" class="input-group-text"><i
+                                                    class="bx bx-map"></i></span>
+                                            <select id="ville" required name="ville" class="form-select">
+                                                <option value="0">Sélection par défaut</option>
+                                                <?php
+                                                $sql1 = "SELECT * FROM `ville` where region=4";
+                                                $region = mysqli_query($conn, $sql1);
+                                                if (mysqli_num_rows($region) > 0) {
+                                                    while ($row = mysqli_fetch_assoc($region)) {
+                                                        echo "<option value=" . $row["nom"] . ">" . $row["nom"] . "</option>";
+                                                    }
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
 
-        <!-- Overlay -->
-        <div class="layout-overlay layout-menu-toggle"></div>
+                                    <div class="col mb-0">
+                                        <label class="form-label" for="basic-icon-default-map-alt">ministère</label>
+                                        <div class="input-group input-group-phone">
+                                            <span id="basic-icon-briefcase-alt-2" class="input-group-text"><i
+                                                    class="bx bx-briefcase-alt-2"></i></span>
+                                            <select required name="ministere" id="ministere" class="form-select">
+                                                <option value="0">Sélection par défaut</option>
+                                                <?php
+                                                $qministere = "SELECT * FROM `ministere`";
+                                                $ministere = mysqli_query($conn, $qministere);
+                                                if (mysqli_num_rows($ministere) > 0) {
+                                                    while ($row = mysqli_fetch_assoc($ministere)) {
+                                                        echo "<option value=" . $row["code"] . ">" . $row["nom"] . "</option>";
+                                                    }
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col mb-0">
+                                        <label class="form-label" for="basic-icon-default-phone">Nom
+                                            d'Entreprise</label>
+                                        <div class="input-group input-group-phone">
+                                            <span id="basic-icon-rename" class="input-group-text"><i
+                                                    class="bx bx-rename"></i></span>
+                                            <select id="Entreprise" required name="Entreprise" class="form-select">
+                                                <option value="0">Sélection par défaut</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <button type="submit" name="addedoss" id="addedoss"
+                                        class="btn btn-primary">ajouter</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Overlay -->
+                <div class="layout-overlay layout-menu-toggle"></div>
+            </div>
+        </div>
     </div>
     <!-- / Layout wrapper -->
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
+    <script>
+        $(document).ready(function () {
+            load_data();
+            function load_data(page) {
+                $.ajax({
+                    url: "paginationdos.php",
+                    method: "POST",
+                    data: {
+                        page: page
+                    },
+                    success: function (data) {
+                        $('#tabledata').html(data);
+                    }
+                });
+            }
+            $('#ville').change(function () {
+                $("#ministere").val("0");
+            });
+            $('#adhesrecher').change(function () {
+                $("#ministererecherch").val("0");
+            });
+            $('#ministere').change(function () {
+                var minister = $("#ministere").val();
+                var villeID = $("#ville").val();
+                if (villeID != 0) {
+                    $.get(
+                        "societeselect.php", {
+                        ville_id_doss: villeID,
+                        minister: minister
+                    },
+                        function (data) {
+                            $('#Entreprise').html(data);
+                        }
+                    );
+                } else {
+                    $("#Entreprise").empty();
+                }
+            });
+            $('#ministererecherch').change(function () {
+                var minister = $("#ministererecherch").val();
+                var adhesrecher =$("#adhesrecher").val();
+                var villeID = $("#villerecherch").val();
+                if (villeID != 0 && minister != 0 && adhesrecher!="no") {
+                    $.get(
+                        "societeparregion.php", {
+                        recherche: "",
+                        villeID: villeID,
+                        adhesrecher:adhesrecher,
+                        minister: minister
+                    },
+                        function (data) {
+                            $('#tabledata').html(data);
+                        }
+                    );
+                } else {
+                    load_data();
+                }
+            });
+
+        });
+    </script>
     <script src="assets/vendor/libs/jquery/jquery.js"></script>
     <script src="assets/vendor/libs/popper/popper.js"></script>
     <script src="assets/vendor/js/bootstrap.js"></script>
     <script src="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
     <script src="assets/vendor/js/menu.js"></script>
     <!-- endbuild -->
+
     <!-- Vendors JS -->
     <script src="assets/vendor/libs/apex-charts/apexcharts.js"></script>
+
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
+
     <!-- Page JS -->
+    <script src="assets/js/dashboards-analytics.js"></script>
+    <script src="assets/js/ui-toasts.js"></script>
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>

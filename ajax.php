@@ -104,26 +104,9 @@ if (isset($_GET["valid"])) {
     }
   }
 }
-if (isset($_GET["nonvalid"])) {
-  $date = $_GET["date"];
-  $reg = $_GET["id"];
-  $id = $_GET["commend"];
-  $numcertif = $_GET["numcertif"];
-  $valide = 'RF';
-  $motif = $_GET["motif"];
-  $queryup = "UPDATE `demand` SET `date`='$date' , `etat_demande`='$valide' , `motif` ='$motif' WHERE `id_demand`='$id'";
-  $res = mysqli_query($conn, $queryup);
-  $query = "select * FROM `dossiersociete` where registre = $reg ";
-  $res = mysqli_query($conn, $query);
-  if (mysqli_num_rows($res) > 0) {
-    $queryup = "UPDATE `dossiersociete` SET `numcertif`='$numcertif'   WHERE `registre`='$reg'";
-    $res = mysqli_query($conn, $queryup);
-  } else {
-    $queryinsert = "INSERT INTO `dossiersociete`(`registre`, `numcertif`) VALUES ('$reg','$numcertif')";
-    $res = mysqli_query($conn, $queryinsert);
-  }
-}
+
 else{
-  echo "error";
+  header('refresh:0;url=404.php'); //2 s
+  exit();
 }
 ?>

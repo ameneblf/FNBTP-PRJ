@@ -14,11 +14,13 @@ if (!isset($_SESSION['loggedin'])) {
 ?>
 <!DOCTYPE html>
 
-<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="assets/" data-template="vertical-menu-template-free">
+<html lang="fr" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="assets/"
+  data-template="vertical-menu-template-free">
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
   <title>Adhésion</title>
 
@@ -30,7 +32,9 @@ if (!isset($_SESSION['loggedin'])) {
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet" />
 
   <!-- Icons. Uncomment required icon fonts -->
   <link rel="stylesheet" href="assets/vendor/fonts/boxicons.css" />
@@ -96,7 +100,7 @@ if (!isset($_SESSION['loggedin'])) {
           <li class="menu-header small text-uppercase">
             <span class="menu-header-text">OPERATIONS</span>
           </li>
-          <li class="menu-item">
+          <li class="menu-item active">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
               <i class="menu-icon tf-icons bx bx-cog"></i>
               <div data-i18n="Account Settings">Operation</div>
@@ -113,6 +117,21 @@ if (!isset($_SESSION['loggedin'])) {
                 </a>
               </li>
               <li class="menu-item">
+                <a href="Qualification.php" class="menu-link">
+                  <div data-i18n="Notifications">Saisie des QC</div>
+                </a>
+              </li>
+              <li class="menu-item ">
+                <a href="mise_certif.php" class="menu-link">
+                  <div data-i18n="Notifications">Certificats de QC</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="demande_encou.php " class="menu-link">
+                  <div data-i18n="Notifications">Certificats encours</div>
+                </a>
+              </li>
+              <!-- <li class="menu-item">
                 <a href="#" class="menu-link">
                   <div data-i18n="Notifications">Formation</div>
                 </a>
@@ -126,10 +145,11 @@ if (!isset($_SESSION['loggedin'])) {
                 <a href="#" class="menu-link">
                   <div data-i18n="Notifications">Journee Etude semminiare</div>
                 </a>
-              </li>
+              </li> -->
             </ul>
           </li>
-          <li class="menu-header small text-uppercase"><span class="menu-header-text">Tableaux de Consultation</span></li>
+          <li class="menu-header small text-uppercase"><span class="menu-header-text">Tableaux de Consultation</span>
+          </li>
           <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
               <i class="menu-icon tf-icons bx bxs-file-find"></i>
@@ -139,6 +159,11 @@ if (!isset($_SESSION['loggedin'])) {
               <li class="menu-item ">
                 <a href="consultation/searchad_quali.php" class="menu-link">
                   <div data-i18n="Connections">Adhésion et Qualification</div>
+                </a>
+              </li>
+              <li class="menu-item ">
+                <a href="consultation/recouvrement.php" class="menu-link">
+                  <div data-i18n="Connections">Recouvrement</div>
                 </a>
               </li>
             </ul>
@@ -188,7 +213,9 @@ if (!isset($_SESSION['loggedin'])) {
       <div class="layout-page">
         <!-- Navbar -->
 
-        <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
+        <nav
+          class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+          id="layout-navbar">
           <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
             <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
               <i class="bx bx-menu bx-sm"></i>
@@ -254,7 +281,7 @@ if (!isset($_SESSION['loggedin'])) {
                     <div class="dropdown-divider"></div>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" href="profile.php">
                       <i class="bx bx-user me-2"></i>
                       <span class="align-middle">Mon profil</span>
                     </a>
@@ -264,7 +291,7 @@ if (!isset($_SESSION['loggedin'])) {
                     echo "<li>
                                 <a class=\"dropdown-item\" href=\"setting.php\">
                                 <i class=\"bx bx-cog me-2\"></i>
-                                <span class=\"align-middle\"> Settings</span>
+                                <span class=\"align-middle\"> Paramètres</span>
                                 </a>
                             </li>";
                   }
@@ -286,15 +313,15 @@ if (!isset($_SESSION['loggedin'])) {
         </nav>
         <!-- / Navbar -->
         <script>
-          $(document).ready(function() {
-            $('#ville').change(function() {
+          $(document).ready(function () {
+            $('#ville').change(function () {
               var villeID = $('#ville').val();
               if (villeID) {
                 $.get(
                   "societeparregion.php", {
-                    ville_id: villeID
-                  },
-                  function(data) {
+                  ville_id: villeID
+                },
+                  function (data) {
                     $('#Entreprise').html(data);
                   }
                 );
@@ -308,89 +335,181 @@ if (!isset($_SESSION['loggedin'])) {
         <div class="content-wrapper">
           <!-- Content -->
           <div class="container-xxl flex-grow-1 container-p-y">
-            <div class="card row g-2">
-              <div class="input-group input-group-merge col mb-0" style="margin-bottom: -5px !important;">
-                <span class="input-group-text" id="basic-addon-search31"><i class="bx bx-search"></i></span>
-                <input id="search" type="text" class="form-control" placeholder="Recherche par nom | code registre" aria-label="Search..." aria-describedby="basic-addon-search31">
-              </div>
-              <div class="row g-2" style="padding-bottom: calc(var(--bs-gutter-x) * 0.7);">
-                <script>
-                  $(document).ready(function() {
-                    $("#search").keyup(function() {
-                      var search = $("#search").val()
-                      $.ajax({
-                        url: 'recherchad.php',
-                        method: 'post',
-                        data: {
-                          adr: search
+            <div class="card ">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class=" card-body">
+                    <label class="form-label" for="basic-icon-default-map-alt">Recherche</label>
+                    <div class="input-group input-group-merge col mb-0" style="margin-bottom: -5px !important;">
+                      <span class="input-group-text" id="basic-addon-search31"><i class="bx bx-search"></i></span>
+
+                      <input id="search" type="text" class="form-control"
+                        placeholder="Recherche par nom | numero regional" aria-label="Search..."
+                        aria-describedby="basic-addon-search31">
+                    </div>
+                  </div>
+                  <script>
+                    var pagenation_old;//=$("#pagination").html();
+                    var qualityserch;
+                    $(document).ready(function () {
+                      $("#search").keyup(function () {
+                        var search = $("#search").val()
+                        if (search != '') {
+                          $.ajax({
+                            url: 'recherchad.php',
+                            method: 'post',
+                            data: {
+                              adr: search
+                            },
+                            success: function (response) {
+                              $('#tabledata').html(response);
+                            }
+                          });
+                        } else {
+                          load_data();
+                        }
+                      });
+                      // $(document).ready(function() {
+                      //   $("#date_fin").change(function() {
+                      //     var datedebut = $("#date_debut").val();
+                      //     var datefin = $("#date_fin").val();
+                      //     $.ajax({
+                      //       url: 'recherchad.php',
+                      //       method: 'get',
+                      //       data: {
+                      //         rechpardat: '',
+                      //         datedebut: datedebut,
+                      //         datefin: datefin
+                      //       },
+                      //       success: function(response) {
+                      //         $('#tabledata').html(response);
+                      //         console.log(response);
+                      //       }
+                      //     });
+                      //     console.log(datedebut + " " + datefin);
+                      //   });
+                      // });
+                      load_data();
+                      function load_data(page) {
+                        $.ajax({
+                          url: "pagenationadh.php",
+                          method: "POST",
+                          data: {
+                            page: page
+                          },
+                          success: function (data) {
+                            $('#tabledata').html(data);
+                          }
+                        });
+                      }
+                      function load_data_par_quality(page) {
+                        qualityserch = $("#qualityserch").val();
+                        $.ajax({
+                          url: "pagination_ad_par_quality.php",
+                          method: "POST",
+                          data: {
+                            page: page,
+                            quality: qualityserch
+                          },
+                          success: function (data) {
+                            $('#tabledata').html(data);
+                          }
+                        });
+                      }
+                      $(document).on('click', '.pagination_link', function () {
+                        qualityserch = $("#qualityserch").val();
+                        var page = $(this).attr("id");
+                        if (qualityserch == 0) {
+                          load_data(page);
+                        } else {
+                          load_data_par_quality(page)
+                        }
+
+                      });
+                      $(document).on('click', '.next', function () {
+                        qualityserch = $("#qualityserch").val();
+                        var page = $(this).attr("id");
+                        if (qualityserch == 0) {
+                          load_data(page);
+                        } else {
+                          load_data_par_quality(page)
+                        }
+                      });
+                      $(document).on('click', '.prev', function () {
+                        qualityserch = $("#qualityserch").val();
+                        var page = 1;
+                        if (qualityserch == 0) {
+                          load_data(page);
+                        } else {
+                          load_data_par_quality(page)
+                        }
+                      });
+
+                      $(document).on("click", "a.update_adher", function () {
+                        var enrow = $(this).closest("tr");
+                        var id = enrow.attr('id');
+                        var qualitimb = enrow.find("td:eq(2)").attr('id');
+                        var nbnatio = enrow.find("td:eq(0)").text();
+                        var date_adhr = enrow.find("td:eq(3)").text();
+                        $('#id_up').val(id);
+                        $('#qualite_membreup').val(qualitimb);
+                        $('#numnatup').val(nbnatio);
+                        $('#date_adup').val(date_adhr);
+                      });
+                      $(document).on("click", "#update_ad", function () {
+                        var registre = $('#id_up').val();
+                        var qualite_membre = $('#qualite_membreup').val();
+                        var numnat = $('#numnatup').val();
+                        var date_ad = $('#date_adup').val();
+                        $.post(
+                          "recherchad.php", {
+                          upadhesion: '',
+                          registre: registre,
+                          numnat: numnat,
+                          date_ad: date_ad,
+                          qualite_membre: qualite_membre,
                         },
-                        success: function(response) {
-                          $('#tabledata').html(response);
+                          function (data) {
+                          }
+                        );
+                      });
+                      $("#qualityserch").change(function () {
+                        qualityserch = $(this).val();
+
+                        if (qualityserch != 0) {
+                          $.get(
+                            "adhesion_par_quality.php", {
+                            pagenation_par_quality: "",
+                            quality: qualityserch
+                          },
+                            function (data) {
+                              $('#pagination').html(data)
+                            }
+                          );
+                          var page = 1;
+                          load_data_par_quality(page);
                         }
                       });
                     });
-                    // $(document).ready(function() {
-                    //   $("#date_fin").change(function() {
-                    //     var datedebut = $("#date_debut").val();
-                    //     var datefin = $("#date_fin").val();
-                    //     $.ajax({
-                    //       url: 'recherchad.php',
-                    //       method: 'get',
-                    //       data: {
-                    //         rechpardat: '',
-                    //         datedebut: datedebut,
-                    //         datefin: datefin
-                    //       },
-                    //       success: function(response) {
-                    //         $('#tabledata').html(response);
-                    //         console.log(response);
-                    //       }
-                    //     });
-                    //     console.log(datedebut + " " + datefin);
-                    //   });
-                    // });
-
-                    load_data();
-
-                    function load_data(page) {
-                      $.ajax({
-                        url: "pagenationadh.php",
-                        method: "POST",
-                        data: {
-                          page: page
-                        },
-                        success: function(data) {
-                          $('#tabledata').html(data);
-                        }
-                      });
-                    }
-                    $(document).on('click', '.pagination_link', function() {
-                      var page = $(this).attr("id");
-                      load_data(page);
-                    });
-                    $(document).on('click', '.next', function() {
-                      var page = $(this).attr("id");
-                      load_data(page);
-                    });
-                    $(document).on('click', '.prev', function() {
-                      var page = 1;
-                      load_data(page);
-                    });
-
-                  });
-                </script>
-                <!-- <div class="mb-2 col">
-                  <label for="html5-date-input" class="mb-2 col col-form-label">Date debut</label>
-                  <div class="mb-2 col">
-                    <input class="form-control" type="date" value="2021-06-18" id="date_debut">
+                  </script>
+                </div>
+                <div class="col-md-6">
+                  <div class=" card-body">
+                    <label class="form-label" for="basic-icon-default-map-alt">Qualite de
+                      membre</label>
+                    <div class="input-group input-group-phone">
+                      <span id="basic-icon-map-alt" class="input-group-text"><i class="bx bxs-star-half"></i></span>
+                      <select id="qualityserch" required="" name="qualite_membre" class="form-select">
+                        <option value="0">Sélection par défaut</option>
+                        <option value="1">Membres du Bureau FNBTP RSK</option>
+                        <option value="2">Entreprises ayant des demandes de QC en cours</option>
+                        <option value="3">Entreprises dont probabilité de recouvrement forte</option>
+                        <option value="4">Entreprises dont probabilité de recouvrement faible</option>
+                        <option value="5">Entreprises règlement au bureau national</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
-                <div class="mb-2 col">
-                  <label for="html5-date-input" class="mb-2 col col-form-label">Date fin</label>
-                  <div class="mb-2 col">
-                    <input class="form-control" type="date" value="2021-06-18" id="date_fin">
-                  </div>
-                </div> -->
               </div>
             </div>
             <br>
@@ -399,14 +518,18 @@ if (!isset($_SESSION['loggedin'])) {
                 <div class="col-md-6">
                   <h5 class="card-header"> <strong>Adhésion</strong></h5>
                 </div>
-                <div class="col-md-4 " style="margin-left: auto;text-align-last: right; align-self: center; padding-right: calc(var(--bs-gutter-x) * 0.9);">
+                <div class="col-md-4 "
+                  style="margin-left: auto;text-align-last: right; align-self: center; padding-right: calc(var(--bs-gutter-x) * 0.9);">
                   <!-- Button trigger modal -->
-                  <button type="button" class="btn btn-primary bx bx-message-square-add" data-bs-toggle="modal" data-bs-target="#modaladd">
+                  <button type="button" class="btn btn-primary bx bx-message-square-add" data-bs-toggle="modal"
+                    data-bs-target="#modaladd">
                   </button>
                 </div>
               </div>
+
               <div class="modal fade " id="modaladd" tabindex="-1" style="display: none;" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" style="max-width: 30rem !important; display: block;" role="document">
+                <div class="modal-dialog modal-dialog-centered" style="max-width: 30rem !important; display: block;"
+                  role="document">
                   <form action="adhesion.php" method="POST">
                     <div class="modal-content container-xxl">
                       <div class="modal-header">
@@ -444,11 +567,12 @@ if (!isset($_SESSION['loggedin'])) {
                         <div class="col mb-0">
                           <label class="form-label" for="basic-icon-default-map-alt">Qualite de membre</label>
                           <div class="input-group input-group-phone">
-                            <span id="basic-icon-map-alt" class="input-group-text"><i class="bx bx-intersect"></i></span>
-                            <select id="qualite_membreup" required name="qualite_membre" class="form-select">
+                            <span id="basic-icon-map-alt" class="input-group-text"><i
+                                class="bx bx-intersect"></i></span>
+                            <select id="qualite_membre" required name="qualite_membre" class="form-select">
                               <option value="0">Sélection par défaut</option>
                               <option value="1">Membres du Bureau FNBTP RSK</option>
-                              <option value="2">Entreprises ayant des demandes de QC en cours auprès du M. Equipement</option>
+                              <option value="2">Entreprises ayant des demandes de QC en cours</option>
                               <option value="3">Entreprises dont probabilité de recouvrement forte</option>
                               <option value="4">Entreprises dont probabilité de recouvrement faible</option>
                               <option value="5">Entreprises règlement au bureau national</option>
@@ -458,34 +582,30 @@ if (!isset($_SESSION['loggedin'])) {
                         <div class="col mb-0">
                           <label class="form-label" for="basic-icon-default-note">Numéro national</label>
                           <div class="input-group input-group-merge">
-                            <span id="basic-icon-default-objects-horizontal-left" class="input-group-text"><i class="bx bx-trending-up"></i></span>
-                            <input type="number" max="10000" min="0" name="numnat" id="basic-icon-code" class="form-control" placeholder="XXXXX" aria-label="numreg" aria-describedby="basic-icon-default-numreg">
+                            <span id="basic-icon-default-objects-horizontal-left" class="input-group-text"><i
+                                class="bx bx-trending-up"></i></span>
+                            <input type="number" max="10000" min="0" name="numnat" id="basic-icon-code"
+                              class="form-control" placeholder="XXXXX" aria-label="numreg"
+                              aria-describedby="basic-icon-default-numreg">
                           </div>
                         </div>
                         <div class="mb-3">
                           <label class="form-label" for="basic-icon-default-note">date d'adhésion</label>
                           <div class="input-group input-group-merge">
-                            <span id="basic-icon-default-note" class="input-group-text"><i class="bx bx-calendar"></i></span>
-                            <input class="form-control" name="date_ad" required type="date" id="html5-datetime-local-input">
+                            <span id="basic-icon-default-note" class="input-group-text"><i
+                                class="bx bx-calendar"></i></span>
+                            <input class="form-control" name="date_ad" required type="date"
+                              id="html5-datetime-local-input">
                           </div>
                         </div>
                         <button type="submit" name="addadhesion" class="btn btn-primary">ajouter</button>
                   </form>
-
                 </div>
               </div>
             </div>
           </div>
           <?php
-          if (isset($_POST["upadhesion"])) {
-            $id = $_POST["registre"];
-            $numreg = $_POST["numreg"];
-            $numnat = $_POST["numnat"];
-            $date_ad = $_POST["date_ad"];
-            $entreprise = $_POST["entreprise"];
-            $queryup = "UPDATE `adhesion` SET `numreg`=$numreg,`numnat`=$numnat,`date_ad`='$date_ad' WHERE `registre`=$id";
-            $conn->query($queryup);
-          }
+
           if (isset($_GET["id_del"])) {
             $id = $_GET["id_del"];
             $query = "DELETE FROM `adhesion` WHERE `id`='$id'";
@@ -494,7 +614,8 @@ if (!isset($_SESSION['loggedin'])) {
             if ($conn->query($upquery) === TRUE) {
             } else {
               echo "Error: " . $upquery . "<br>" . $conn->$error;
-            };
+            }
+            ;
           }
           ?>
 
@@ -507,24 +628,26 @@ if (!isset($_SESSION['loggedin'])) {
               $date_ad = $_POST["date_ad"];
               $res = $conn->query("SELECT ENTREPRISE FROM `societe` WHERE `Id`=$id");
               $row = mysqli_fetch_row($res);
-              $entreprise = $row[0];
-                $query = "INSERT INTO `adhesion`(`nb_national`, `ENTREPRISE`, `qualite_membre`, `date_ad`, `id_entre`) 
+              $entreprise = str_replace("'", "\'", $row[0]);
+              $query = "INSERT INTO `adhesion`(`nb_national`, `ENTREPRISE`, `qualite_membre`, `date_ad`, `id_entre`) 
                                          VALUES ('$nb_national','$entreprise','$qualite_membre','$date_ad','$id ')";
-                if ($conn->query($query) === TRUE) {
-                  $upquery = "UPDATE `societe` SET `adher` = '1',`nb_national` = '$nb_national' WHERE `societe`.`Id` = '" . $_POST["Entreprise"] . "'";
-                  if ($conn->query($upquery) === TRUE) {
-                  } else {
-                    echo "Error: " . $upquery . "<br>" . $conn->$error;
-                  };
+              if ($conn->query($query) === TRUE) {
+                $upquery = "UPDATE `societe` SET `adher` = '1',`nb_national` = '$nb_national' WHERE `societe`.`Id` = '" . $_POST["Entreprise"] . "'";
+                if ($conn->query($upquery) === TRUE) {
                 } else {
-                  echo "Error: " . $query . "<br>" . $conn->$error;
-                };
+                  echo "Error: " . $upquery . "<br>" . $conn->$error;
+                }
+                ;
+              } else {
+                echo "Error: " . $query . "<br>" . $conn->$error;
+              }
+              ;
             }
             ?>
             <table class="table table-hover">
               <thead>
                 <tr>
-                  <th>Numéro national</th>
+                  <th>Numéro regional</th>
                   <th>Entreprise</th>
                   <th>QUALITE DE MEMBRE</th>
                   <th>annee d'adhésion</th>
@@ -536,25 +659,26 @@ if (!isset($_SESSION['loggedin'])) {
               </tbody>
             </table>
           </div>
-          <?php
-          $record_per_page = 25;
-          echo "<br /><div align=\"center\"> <nav aria-label=\"Page navigation\">
+          <div id="pagination">
+            <?php
+            $record_per_page = 25;
+            echo "<br /><div align=\"center\"> <nav aria-label=\"Page navigation\">
               <ul class=\"pagination pagination-sm justify-content-center\">
                 <li class=\"page-item\">
                   <a class=\"page-link prev\" href=\"javascript:void(0);\"><i class=\"tf-icon bx bx-chevrons-left\"></i></a>
                 </li>";
-          $page_query = "SELECT * FROM adhesion ORDER BY Id ASC";
-          $page_result = mysqli_query($conn, $page_query);
-          $total_records = mysqli_num_rows($page_result);
-          $total_pages = ceil($total_records / $record_per_page);
-          for ($i = 1; $i <= $total_pages; $i++) {
-            echo "
+            $page_query = "SELECT * FROM adhesion ORDER BY Id ASC";
+            $page_result = mysqli_query($conn, $page_query);
+            $total_records = mysqli_num_rows($page_result);
+            $total_pages = ceil($total_records / $record_per_page);
+            for ($i = 1; $i <= $total_pages; $i++) {
+              echo "
                 <li class=\"page-item \">
                   <a class=\"page-link pagination_link\" id='" . $i . "'>" . $i . "</a>
                 </li>
                 ";
-          }
-          echo "<li class=\"page-item \">
+            }
+            echo "<li class=\"page-item \">
                   <a class=\"page-link next\" id=" . $total_pages . " href=\"javascript:void(0);\">
                     <i class=\"tf-icon bx bx-chevrons-right\" ></i>
                   </a>
@@ -562,7 +686,8 @@ if (!isset($_SESSION['loggedin'])) {
               </ul>
             </nav><br /><br />";
 
-          ?>
+            ?>
+          </div>
         </div>
       </div>
       <!-- Content wrapper -->
@@ -570,6 +695,59 @@ if (!isset($_SESSION['loggedin'])) {
     <!-- / Layout page -->
   </div>
 
+  <div class="modal fade " id="modalupdate" tabindex="-1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 30rem !important; display: block;"
+      role="document">
+      <form action="" method="">
+        <div class="modal-content container-xxl">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalCenterTitle">Modifier l'Adhésion</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="card-body">
+            <div class="col mb-0" style="display: none;">
+              <label class="form-label" for="basic-icon-default-note">id</label>
+              <div class="input-group input-group-merge">
+                <span id="basic-icon-default-objects-horizontal-left" class="input-group-text"><i
+                    class="bx bx-trending-up"></i></span>
+                <input type="number" max="10000" min="0" name="id_up" id="id_up" class="form-control"
+                  placeholder="XXXXX" aria-label="numreg" aria-describedby="basic-icon-default-numreg">
+              </div>
+            </div>
+            <div class="col mb-0">
+              <label class="form-label" for="basic-icon-default-map-alt">Qualite de membre</label>
+              <div class="input-group input-group-phone">
+                <span id="basic-icon-map-alt" class="input-group-text"><i class="bx bx-intersect"></i></span>
+                <select id="qualite_membreup" required name="qualite_membreup" class="form-select">
+                  <option value="0">Sélection par défaut</option>
+                  <option value="1">Membres du Bureau FNBTP RSK</option>
+                  <option value="2">Entreprises ayant des demandes de QC en cours</option>
+                  <option value="3">Entreprises dont probabilité de recouvrement forte</option>
+                  <option value="4">Entreprises dont probabilité de recouvrement faible</option>
+                  <option value="5">Entreprises règlement au bureau national</option>
+                </select>
+              </div>
+            </div>
+            <div class="col mb-0">
+              <label class="form-label" for="basic-icon-default-note">Numéro national</label>
+              <div class="input-group input-group-merge">
+                <span id="basic-icon-default-objects-horizontal-left" class="input-group-text"><i
+                    class="bx bx-trending-up"></i></span>
+                <input type="number" max="10000" min="0" name="numnatup" id="numnatup" class="form-control"
+                  placeholder="XXXXX" aria-label="numreg" aria-describedby="basic-icon-default-numreg">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="basic-icon-default-note">date d'adhésion</label>
+              <div class="input-group input-group-merge">
+                <span id="basic-icon-default-note" class="input-group-text"><i class="bx bx-calendar"></i></span>
+                <input class="form-control" name="date_adup" required type="date" id="date_adup">
+              </div>
+            </div>
+            <button type="submit" id="update_ad" name="update_ad" class="btn btn-primary">Modifier</button>
+      </form>
+    </div>
+  </div>
   <!-- Overlay -->
   <div class="layout-overlay layout-menu-toggle"></div>
   </div>
